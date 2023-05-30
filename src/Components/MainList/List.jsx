@@ -24,7 +24,35 @@ const[Lista,setLista]=useState([])
       daList()
     }, [Lista])
 
- 
+
+    /////PATCH TASKS TO DONE
+    const [_id, setId] = useState('')
+    
+    const handleChange = (event) => {
+      setId(event.target.value);
+    }
+
+    useEffect(() => {
+      console.log(_id)
+    }, [_id])
+    
+    const PatchNew1= async()=>{
+
+   
+
+      const requestedOptions={
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+       
+      };
+      
+      const response= await fetch('http://Localhost:3006/done/'+_id,requestedOptions)
+      const data= await response.json()
+      console.log(data)
+  
+      }
+    
+      
 
   return (
     <>
@@ -32,10 +60,16 @@ const[Lista,setLista]=useState([])
     <div className={styles.wrapper}>
         <ul className={styles.list_container}>
        
-        {Lista.map((element,index)=><li key={index}
+        {Lista.map((element,index)=><li 
+        key={index}
         className={!element.done ? styles.element : styles.done}
+        onClick={PatchNew1}
         >
-        <input disabled={element.done ? 'disabled':''} type='radio'/>
+        <input
+        value={element._id} 
+        onChange={handleChange}
+       
+        disabled={element.done ? 'disabled':''} type='radio'/>
         <p >{element.task}</p></li>)}
       
         </ul>
