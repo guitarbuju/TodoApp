@@ -4,13 +4,18 @@ import styles from './head.module.css'
 
 
 const Head = () => {
+
+    const currentDate = new Date()
+    const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
+    const currentDay= currentDate.getDate()
+
   return (
     <div className={styles.wrapper}>
         <div className={styles.head}>
             <div className={styles.date}>
-                <p className={styles.month}>MAY</p>
+                <p className={styles.month}>{currentMonth}</p>
                 <div className={styles.dayWrapper}>
-                    <p className={styles.day}>23</p>
+                    <p className={styles.day}>{currentDay}</p>
                 </div>
                 
             </div>

@@ -70,7 +70,9 @@ const List = () => {
     <>
       <Head />
       <div className={styles.wrapper}>
-        <ul className={styles.list_container}>
+      {Lista.length=== 0?
+      (<h1>No List Available Yet</h1>):
+        (<ul className={styles.list_container}>
           {Lista.map((element, index) => (
             <li
               onDoubleClick={() => handleDelete(element._id)}
@@ -86,7 +88,7 @@ const List = () => {
               <p>{element.task}</p>
             </li>
           ))}
-        </ul>
+        </ul>)}
       </div>
     </>
   );
