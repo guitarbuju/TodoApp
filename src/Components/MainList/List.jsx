@@ -24,6 +24,7 @@ const List = () => {
 
   const handleChange = (event) => {
     setId(event.target.value)
+    event.target.checked=false
   };
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const List = () => {
   // If the patch request is successful, update the list
   
 
- 
+ //////////////////////////////////DELETE TASK///////////////////////
   
   const handleDelete = async (_id) => {
     const requestOptions = {
@@ -65,6 +66,13 @@ const List = () => {
       daList()
     }
   };
+/////////// TIME STAMP/////////////
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString)
+  return date.toLocaleDateString("en-US")
+};
+
 
   return (
     <>
@@ -75,6 +83,7 @@ const List = () => {
         (<ul className={styles.list_container}>
           {Lista.map((element, index) => (
             <li
+            
               onDoubleClick={() => handleDelete(element._id)}
               key={index}
               className={!element.done ? styles.element : styles.done}
@@ -86,6 +95,7 @@ const List = () => {
                 type="radio"
               />
               <p>{element.task}</p>
+              <span className={styles.formatDate}>updated at:  {formatDate(element.updatedAt)}</span>
             </li>
           ))}
         </ul>)}
