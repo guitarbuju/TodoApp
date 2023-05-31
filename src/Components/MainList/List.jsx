@@ -38,8 +38,6 @@ const[Lista,setLista]=useState([])
       }, [_id]);
       
     
-  
-    
     const PatchNew1= async()=>{
 
       const requestedOptions={
@@ -47,7 +45,6 @@ const[Lista,setLista]=useState([])
         headers: { "Content-Type": "application/json" },
         
       };
-     
      
       const response= await fetch(`http://Localhost:3006/done/${_id}`,requestedOptions)
       const data= await response.json()
