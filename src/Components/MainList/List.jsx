@@ -8,7 +8,7 @@ const List = () => {
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    const response = await fetch("http://Localhost:3006/");
+    const response = await fetch("http://Localhost:3006/today");
     const data = await response.json();
     const sortedList = data.sort((a, b) => b - a).reverse();
 
@@ -126,9 +126,9 @@ const List = () => {
                 <div className={styles.statusWrapper}>
                 <p className={styles.formatDate}>update:{formatDate(element.date)}</p>
                   {element.inProgress ? (
-                    <p className={styles.formatDate}>in progress</p>
+                    <p className={styles.formatProgress}>in progress</p>
                   ) : (
-                    <p className={styles.formatDate}>not in progress</p>
+                    <p className={styles.formatDate}></p>
                   )}
                   <div 
                   onClick={()=>handleDelete(element._id)}
