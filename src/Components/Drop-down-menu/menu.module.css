@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap');
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown_toggle {
+    width:8vh;
+    border: none;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 4vh;
+  }
+  
+  .dropdown_menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 0;
+    margin-top: 5px;
+    list-style-type: none;
+    width:20vh;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow:0px 0px 0px 6px 1px rgba(0,0,0,0.15);
+  }
+  
+  .dropdown_menu li {
+   
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .dropdown_menu li a{
+    color:#333;
+    text-decoration: none;
+    list-style-type: none;
+    text-shadow: none;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  
+  .dropdown_toggle:focus,
+  .dropdown_toggle:hover {
+   box-shadow:0px 0px 0px 6px 1px rgba(0,0,0,0.15);
+  }
+  
+  .dropdown_toggle:focus + .dropdown_menu,
+  .dropdown_toggle:hover + .dropdown_menu,
+  .dropdown_menu:hover {
+    display: block;
+  }
+  

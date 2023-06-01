@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import styles from './head.module.css'
+import Menu from '../Drop-down-menu/Menu'
+
 
 
 const Head = () => {
@@ -12,6 +14,7 @@ const Head = () => {
   return (
     <div className={styles.wrapper}>
         <div className={styles.head}>
+      
             <div className={styles.date}>
                 <p className={styles.month}>{currentMonth}</p>
                 <div className={styles.dayWrapper}>
@@ -24,7 +27,7 @@ const Head = () => {
                 <h1>Today</h1>
             </div>
             <div className={styles.dots}>
-                <span>...</span>
+            <Menu />
             </div>
 
         </div>

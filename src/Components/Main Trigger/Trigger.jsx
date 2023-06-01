@@ -19,14 +19,15 @@ const Trigger = () => {
 
   //////////////POST TAREA NUEVA///////////////////////
   const onSubmit = (predata) => {
-    const done = false;
+    const done = false
+    const inProgress=false
     const ProperDate = new Date(predata.date).toISOString();
 
     //aqui sacamos el date con el formato de string
     // eslint-disable-next-line no-unused-vars
     const { date, ...moredata } = predata;
     //aqui agregamos a los datos recogidos del formulario el done y la fecha con el formato apropiado
-    const obj = { ...moredata, ProperDate, done };
+    const obj = { ...moredata, ProperDate, done , inProgress};
 
     console.log(obj);
 
