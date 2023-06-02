@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useRef } from 'react';
 import menuStyles from '../Drop-down-menu/menu.module.css'
-
+import {NavLink} from 'react-router-dom'
 
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -31,9 +31,10 @@ const Menu = () => {
       </button>
       {isMenuOpen && (
         <ul className={menuStyles.dropdown_menu}>
-          <li><a href="#">Completed</a></li>
-          <li><a href="#">in Progress</a></li>
-          <li><a href="#">Removed</a></li>
+          <li><NavLink to="/">Today`s</NavLink></li>
+          <li><NavLink to="/inProgress">In Progress</NavLink></li>
+          <li><NavLink to="/completed">Completed</NavLink></li>
+          <li><NavLink to="/allTasks">all Tasks</NavLink></li>
         </ul>
       )}
     </div>

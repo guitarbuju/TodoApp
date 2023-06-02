@@ -3,6 +3,7 @@ import { useState, useEffect, React } from "react";
 import styles from "./list.module.css";
 import Head from "./Head";
 
+
 const List = () => {
   const [Lista, setLista] = useState([]);
 
@@ -102,6 +103,7 @@ const List = () => {
 
   return (
     <>
+      <h4>List of Tasks due Today</h4>
       <Head />
       <div className={styles.wrapper}>
         {Lista.length === 0 ? (
@@ -124,21 +126,27 @@ const List = () => {
                   <p>{element.task}</p>
                 </div>
                 <div className={styles.statusWrapper}>
-                <p className={styles.formatDate}>update:{formatDate(element.date)}</p>
+                  <p className={styles.formatDate}>
+                    update:{formatDate(element.date)}
+                  </p>
                   {element.inProgress ? (
                     <p className={styles.formatProgress}>in progress</p>
                   ) : (
                     <p className={styles.formatDate}></p>
                   )}
-                  <div 
-                  onClick={()=>handleDelete(element._id)}
-                  className={styles.close_button}>&#9746;</div>
+                  <div
+                    onClick={() => handleDelete(element._id)}
+                    className={styles.close_button}
+                  >
+                    &#9746;
+                  </div>
                 </div>
               </li>
             ))}
           </ul>
         )}
       </div>
+    
     </>
   );
 };
