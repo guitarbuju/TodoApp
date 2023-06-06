@@ -1,0 +1,31 @@
+
+
+.inputData{
+    border:1px solid black;
+    margin-top: 20vh;
+width:40vh;  
+display:flex;
+flex-direction: column;
+justify-content: center;
+padding: 2vh;
+
+}
+
+.buttons{
+    padding:2vh;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    gap:1vh;
+}
+
+.dainput{
+   
+padding-bottom: 2vh;
+}
+.signin{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color:blue
+}

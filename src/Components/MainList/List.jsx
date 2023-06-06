@@ -78,7 +78,7 @@ const List = () => {
   const InProgress = async (_id) => {
     const requestedOptions = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json"},
     };
 
     const response = await fetch(

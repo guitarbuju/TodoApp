@@ -26,7 +26,7 @@ const Menu = () => {
 
   return (
     <div className={menuStyles.dropdown} ref={dropdownRef}>
-      <button className={menuStyles.dropdown_toggle} onClick={toggleMenu} onFocus={handleFocus} onBlur={handleBlur}>
+      <button className={menuStyles.dropdown_toggle} onMouseDown={toggleMenu} onFocus={handleFocus} onBlur={handleBlur}>
         . . .
       </button>
       {isMenuOpen && (

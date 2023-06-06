@@ -30,11 +30,12 @@
   
   }
   
-  .dropdown_menu li {
+  .dropdown_menu li:hover {
     font-family: 'Roboto', sans-serif;
     height: 50px;
   
   }
+  
   .dropdown_menu li a{
     color:#333;
     text-decoration: none;

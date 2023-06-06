@@ -13,21 +13,21 @@ const Trigger = () => {
   const {
     register,
     handleSubmit,
-     // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars
     formState: { errors },
   } = useForm();
 
   //////////////POST TAREA NUEVA///////////////////////
   const onSubmit = (predata) => {
-    const done = false
-    const inProgress=false
+    const done = false;
+    const inProgress = false;
     const ProperDate = new Date(predata.date).toISOString();
 
     //aqui sacamos el date con el formato de string
     // eslint-disable-next-line no-unused-vars
     const { date, ...moredata } = predata;
     //aqui agregamos a los datos recogidos del formulario el done y la fecha con el formato apropiado
-    const obj = { ...moredata, ProperDate, done , inProgress};
+    const obj = { ...moredata, ProperDate, done, inProgress };
 
     console.log(obj);
 
@@ -59,6 +59,12 @@ const Trigger = () => {
             <input type="date" className="form-control" {...register("date")} />
             <label>Add New Task</label>
             <input type="text" className="form-control" {...register("task")} />
+            <label>Add Category</label>
+            <select className="form-select form-select-sm" name="Category" {...register("category")}>
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="others">Others</option>
+            </select>
           </div>
           <div className={styles.buttonGroup}>
             <input
