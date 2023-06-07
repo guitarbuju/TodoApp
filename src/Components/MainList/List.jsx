@@ -2,15 +2,15 @@
 import { useState, useEffect, React } from "react";
 import styles from "./list.module.css";
 import Head from "./Head";
-
+import axios from 'axios'
 
 const List = () => {
   const [Lista, setLista] = useState([]);
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    const response = await fetch("http://Localhost:3006/today");
-    const data = await response.json();
+    const response = await axios.get("http://Localhost:3006/today");
+    const data = await response.data;
     const sortedList = data.sort((a, b) => b - a).reverse();
 
     setLista(sortedList);
@@ -40,11 +40,11 @@ const List = () => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const response = await fetch(
+    const response = await axios.patch(
       `http://Localhost:3006/done/${_id}`,
       requestedOptions
     );
-    const data = await response.json();
+    const data = await response.data;
     console.log(data);
     if (response.ok) {
       // If the delete request is successful, update the list
@@ -61,11 +61,11 @@ const List = () => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const response = await fetch(
+    const response = await axios.delete(
       `http://Localhost:3006/delete/${_id}`,
       requestedOptions
     );
-    const data = await response.json();
+    const data = await response.data;
     console.log(data);
     if (response.ok) {
       // If the delete request is successful, update the list
@@ -81,11 +81,11 @@ const List = () => {
       headers: { "Content-Type": "application/json"},
     };
 
-    const response = await fetch(
+    const response = await axios.patch(
       `http://Localhost:3006/inprogress/${_id}`,
       requestedOptions
     );
-    const data = await response.json();
+    const data = await response.data;
     console.log(data);
     if (response.ok) {
       // If the delete request is successful, update the list
