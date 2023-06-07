@@ -48,3 +48,27 @@ input[type="date"]:hover{
     gap:1vh;
 
 }
+.createNew{
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color:blue;
+    line-height: 70px;
+    height: 70px;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out,
+    box-border 0.5s ease-in-out; 
+    border-radius: 20px;
+    padding-left: 95px;
+    cursor:pointer;
+
+
+}
+
+.createNew span{
+    
+    font-size: 37px;
+    padding-right: 40px;
+    
+}

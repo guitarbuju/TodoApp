@@ -31,7 +31,7 @@ const Menu = () => {
       </button>
       {isMenuOpen && (
         <ul className={menuStyles.dropdown_menu}>
-          <li><NavLink to="/">Today`s</NavLink></li>
+          <li><NavLink to="/today">Today`s</NavLink></li>
           <li><NavLink to="/inProgress">In Progress</NavLink></li>
           <li><NavLink to="/completed">Completed</NavLink></li>
           <li><NavLink to="/allTasks">all Tasks</NavLink></li>
