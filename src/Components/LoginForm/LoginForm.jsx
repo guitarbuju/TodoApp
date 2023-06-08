@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import axios from 'axios'
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,20 +14,33 @@ const LoginForm = () => {
 // eslint-disable-next-line no-unused-vars
   const { register, handleSubmit, formState: { errors } } = useForm();
   
-
+const navigate=useNavigate()
 
   const onSubmit= async(data)=>{
     console.log(data)
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    };
-     axios.post("http://localhost:3006/login", requestOptions)
-     .then((res)=>res.json())
-     .then((data)=>console.log(data))
-     .catch((err)=>console.log(err))
+    // const requestOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(data),
+    // };
+    //  axios.post("http://localhost:3006/login", requestOptions)
+    //  .then((res)=>res.json())
+    //  .then((data)=>console.log(data))
+    //  .catch((err)=>console.log(err))
     
+    try {
+      const response = await axios.post('http://localhost:3006/login', data);
+      const { token } = response.data;
+
+      // Save the token to local storage
+      localStorage.setItem('token', token);
+
+      navigate('/today')
+
+      console.log('Logged in successfully');
+    } catch (error) {
+      console.error(error);
+    }
   }
 
 
