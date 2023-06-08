@@ -18,16 +18,7 @@ const navigate=useNavigate()
 
   const onSubmit= async(data)=>{
     console.log(data)
-    // const requestOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(data),
-    // };
-    //  axios.post("http://localhost:3006/login", requestOptions)
-    //  .then((res)=>res.json())
-    //  .then((data)=>console.log(data))
-    //  .catch((err)=>console.log(err))
-    
+   
     try {
       const response = await axios.post('http://localhost:3006/login', data);
       const { token } = response.data;
