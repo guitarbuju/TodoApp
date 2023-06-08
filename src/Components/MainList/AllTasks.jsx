@@ -2,14 +2,15 @@
 import { useState, useEffect, React } from "react";
 import styles from "./list.module.css";
 import Head from "./Head";
+import axios from 'axios'
 
 const AllTasks = () => {
   const [Lista, setLista] = useState([]);
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    const response = await fetch("http://Localhost:3006/");
-    const data = await response.json();
+    const response = await axios.get("http://Localhost:3006/");
+    const data = await response.data;
     const sortedList = data.sort((a, b) => b - a).reverse();
 
     setLista(sortedList);

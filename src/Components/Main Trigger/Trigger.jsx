@@ -4,6 +4,7 @@ import styles from "./trigger.module.css";
 import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.css";
 import List from "../MainList/List"; //Este es el componente con la lista
+import axios from 'axios'
 //import Listado from '../../daList/'//se importa la funcion que trae el array con la data desde el fichero de funciones
 
 const Trigger = () => {
@@ -24,6 +25,7 @@ const Trigger = () => {
     const done = false;
     const inProgress = false;
     const ProperDate = new Date(predata.date).toISOString();
+   console.log(ProperDate)
 
     //aqui sacamos el date con el formato de string
     // eslint-disable-next-line no-unused-vars
@@ -34,19 +36,24 @@ const Trigger = () => {
     console.log(obj);
 
     const PostNew1 = async () => {
-      const requestedOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(obj),
-      };
+      // 
 
-      const response = await fetch(
-        "http://Localhost:3006/main",
-        requestedOptions
-      );
-      const data = await response.json();
-      console.log(data);
+      try {
+        const response = await axios.post(
+          "http://localhost:3006/main",
+          obj,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+    
+        const data = response.data;
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
+
 
     PostNew1();
   };
