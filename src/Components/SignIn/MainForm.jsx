@@ -5,17 +5,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import { setItemToLocalStorage} from '../../assets/utils.js'
-
+import { useNavigate } from 'react-router-dom';
 
 
 const MainForm = () => {
-//Register con fetch
+
   const [answer,setanswer]=useState('')
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
 
-
+ const navigate=useNavigate()
  
 const Register=(e)=>{
  
@@ -23,15 +23,14 @@ const Register=(e)=>{
     const obj = { name, email, password }
     
     console.log(obj)
-  // const requestOptions = {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(obj),
-  // };
  
-
+   
+ 
+    
  
     const signIn = async () => {
+
+      
       try {
         const response = await axios.post('http://Localhost:3006/register',
         obj,{ headers:{"Content-Type": "application/json"} });
@@ -43,9 +42,9 @@ const Register=(e)=>{
         setItemToLocalStorage('token',token)
         setItemToLocalStorage('user',user)
 
+        navigate('/today')
 
-
-       setanswer('Ha sido registrado con exito')
+     
        console.log(data.token)
       } catch (error) {
         console.error(error);
