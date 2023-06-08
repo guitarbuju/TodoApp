@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
+import axios from 'axios'
 
 
 
@@ -22,7 +23,7 @@ const LoginForm = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
-     fetch("http://localhost:3006/login", requestOptions)
+     axios.post("http://localhost:3006/login", requestOptions)
      .then((res)=>res.json())
      .then((data)=>console.log(data))
      .catch((err)=>console.log(err))

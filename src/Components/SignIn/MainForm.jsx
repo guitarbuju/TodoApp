@@ -3,7 +3,7 @@ import styles from './mainForm.module.css'
 import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
-
+import axios from 'axios'
 
 
 
@@ -33,9 +33,9 @@ const Register=(e)=>{
  
     const signIn = async () => {
       try {
-        const response = await fetch('http://Localhost:3006/register',requestOptions);
+        const response = await axios.get('http://Localhost:3006/register',requestOptions);
         // eslint-disable-next-line no-unused-vars
-       const data= await response.json()
+       const data= await response
        
        setanswer('Ha sido registrado con exito')
        console.log(data.token)
