@@ -7,7 +7,7 @@ import InProgress from './Components/MainList/InProgress'
 import AllTasks from './Components/MainList/AllTasks'
 import LoginForm from './Components/LoginForm/LoginForm'
 import MainForm from './Components/SignIn/MainForm'
-
+import Header from './Components/Header/Header'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div>
-  
+    <Header />
     
 
 

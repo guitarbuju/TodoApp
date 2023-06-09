@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap');
 .wrapper{
+    margin-top: 5vh;
     display:flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items:flex-start;
     width: 100vh;
     padding-left: 6vh;
-    margin-bottom: 50px;
+   
+    
     /* border:1px solid black */
 }
 .head{

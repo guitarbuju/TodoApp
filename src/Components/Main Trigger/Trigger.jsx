@@ -39,18 +39,26 @@ const Trigger = () => {
       // 
 
       try {
+
+        const token = localStorage.getItem('token')
+        const config= {
+          headers: { "Content-Type": "application/json" ,
+                   "Authorization": `Bearer ${token}`},
+        }
         const response = await axios.post(
           "http://localhost:3006/main",
-          obj,
-          {
-            headers: { "Content-Type": "application/json" },
-          }
+          obj,config
+          
         );
     
         const data = response.data;
         console.log(data);
+        
+        setShowForm(false)
+
       } catch (error) {
         console.error(error);
+       
       }
     };
 
@@ -60,19 +68,25 @@ const Trigger = () => {
 
   return (
     <>
+    
       <List />
       <div className={styles.wrapper}>
       <p className={styles.createNew} 
       onClick={handleToggle}>
       <span>&#x2A01;</span>
       Create new item</p>
-
+      
       {showForm && (
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} >
           <div className="form-group">
+            <div>
             <label>Add Due Date </label>
             <input type="date" className="form-control" {...register("date")} />
+
+
+            </div>
+            
             <label>Add New Task</label>
             <input type="text" className="form-control" {...register("task")} />
             <label>Add Category</label>
@@ -96,6 +110,7 @@ const Trigger = () => {
           </div>
         </form>)}
       </div>
+    
     </>
   );
 };
