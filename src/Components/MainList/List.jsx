@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { useState, useEffect, React } from "react";
 import styles from "./list.module.css";
-import Head from "./Head";
+
 import axios from 'axios'
 
 const List = () => {
@@ -9,7 +9,17 @@ const List = () => {
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    const response = await axios.get("http://Localhost:3006/today");
+
+
+    const token = localStorage.getItem('token')
+
+    const requestedOptions = {
+      method: "GET",
+      headers: { "Content-Type": "application/json",
+                 "authorization":`Bearer ${token}` 
+                },
+    };
+    const response = await axios.get("http://Localhost:3006/today",requestedOptions);
     const data = await response.data;
     const sortedList = data.sort((a, b) => b - a).reverse();
 
@@ -35,9 +45,14 @@ const List = () => {
   }, [_id]);
 
   const PatchNew1 = async () => {
+    
+    const token = localStorage.getItem('token')
+
     const requestedOptions = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+                 "authorization":`Bearer ${token}` 
+                },
     };
 
     const response = await axios.patch(
@@ -47,18 +62,24 @@ const List = () => {
     const data = await response.data;
     console.log(data);
     if (response.ok) {
-      // If the delete request is successful, update the list
+      // If the patch request is successful, update the list
       daList();
     }
   };
+  
   // If the patch request is successful, update the list
 
   //////////////////////////////////DELETE TASK///////////////////////
 
   const handleDelete = async (_id) => {
+
+    const token = localStorage.getItem('token')
+
     const requestedOptions = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+                 "authorization":`Bearer ${token}` 
+                },
     };
 
     const response = await axios.delete(
@@ -76,9 +97,14 @@ const List = () => {
   ////////////////////////// PATCH IN PROGRESS///////////////////////
 
   const InProgress = async (_id) => {
+   
+    const token = localStorage.getItem('token')
+
     const requestedOptions = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json",
+                 "authorization":`Bearer ${token}` 
+                },
     };
 
     const response = await axios.patch(
@@ -103,9 +129,10 @@ const List = () => {
 
   return (
     <>
-      <h4>List of Tasks due Today</h4>
-      <Head />
+      
+       <h4>List of Tasks due Today</h4>
       <div className={styles.wrapper}>
+     
         {Lista.length === 0 ? (
           <h1>No List Available Yet</h1>
         ) : (

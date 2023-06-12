@@ -22,7 +22,7 @@ const navigate=useNavigate()
     try {
       const response = await axios.post('http://localhost:3006/login', data);
       const { token } = response.data;
-
+      console.log(response.data) 
       // Save the token to local storage
       localStorage.setItem('token', token);
 
