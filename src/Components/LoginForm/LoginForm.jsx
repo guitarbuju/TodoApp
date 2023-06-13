@@ -45,12 +45,12 @@ const navigate=useNavigate()
       <h1>Log In</h1>
         <div className={styles.dainput}>
             <label htmlFor="email" style={{fontWeight:'bolder'}}>EMAIL</label>
-            <input className='form-control' {...register("email", { required: true })} />
+            <input type='email' className='form-control' {...register("email", { required: true })} />
         </div>
         
        <div className={styles.dainput}>
             <label htmlFor="password" style={{fontWeight:'bolder'}}>PASSWORD</label>
-            <input className='form-control' {...register("password", { required: true })} />
+            <input type='password' className='form-control' {...register("password", { required: true })} />
        </div>
         
      </div>
