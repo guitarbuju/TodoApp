@@ -10,7 +10,7 @@ const Spinner = () => {
 
     const timeoutId = setTimeout(() => {
       // Navigate to another component after the specified delay
-      navigate("/");
+      navigate("/today");
     }, delay);
 
     // Clean up the timeout when the component unmounts
@@ -22,7 +22,7 @@ const Spinner = () => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.ver}>Thank You for visiting....</h1>
+        <h1 className={styles.ver}>Welcome to Todo App List....</h1>
         <h1 className={styles.loader}></h1>
       </div>
     </div>

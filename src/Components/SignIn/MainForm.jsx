@@ -24,7 +24,7 @@ const MainForm = () => {
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
 
-    navigate('/today')
+    navigate('/spinner2')
 
     console.log('Register successfull');
   } catch (error) {

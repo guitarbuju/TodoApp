@@ -27,7 +27,7 @@ const Head = () => {
 
   return (
     <div className={styles.wrapper}>
-        <div className={styles.head}>
+        <div className={ user ? styles.head : styles.nohead}>
       
             <div className={styles.date}>
                 <p className={styles.month}>{currentMonth}</p>
@@ -41,11 +41,11 @@ const Head = () => {
                 <h1>Today</h1>
             </div>
             <div className={styles.dots}>
-            <Menu />
+           <Menu /> 
            
             </div>
 
-            {user ? <button  className='btn btn-danger btn-lg' onClick={logout}>Log Out</button>: ''}
+             <button  className='btn btn-danger btn-lg' onClick={logout}>Log Out</button>
         </div>
 
       
