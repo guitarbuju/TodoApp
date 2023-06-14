@@ -6,7 +6,7 @@
     padding-left: 2vh;
     max-height: 60vh;
     overflow-y: auto;
- 
+    animation: appear 2s linear 1;
 }
 
 .list_container{
@@ -141,5 +141,15 @@ input[type="radio"] {
   }
 
   h4{margin-top:40px ;
+    animation: appear 2s linear 1;
     
   }
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
