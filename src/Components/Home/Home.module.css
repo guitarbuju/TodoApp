@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+.container{
+    max-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+  
+  }
+  
+ .title{
+    margin-top: 40px;
+    font-size: 70px;
+    font-family: 'Kaushan Script', cursive;
+  }
