@@ -8,7 +8,7 @@ import AllTasks from './Components/MainList/AllTasks'
 import LoginForm from './Components/LoginForm/LoginForm'
 import MainForm from './Components/SignIn/MainForm'
 import Header from './Components/Header/Header'
-
+import Spinner from './Components/Spinner/Spinner'
 
 function App() {
   
@@ -26,6 +26,7 @@ function App() {
         <Route path='/completed' element={<Completed /> }/>
         <Route path='/inProgress' element={<InProgress /> }/>
         <Route path='/allTasks' element={<AllTasks /> }/>
+        <Route path='/spinner' element={<Spinner /> }/>
       </Routes>
      
     </div>
