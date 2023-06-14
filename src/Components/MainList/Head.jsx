@@ -2,8 +2,8 @@
 import React from 'react'
 import styles from './head.module.css'
 import Menu from '../Drop-down-menu/Menu'
-
-
+import "bootstrap/dist/css/bootstrap.css";
+import { useNavigate } from 'react-router-dom';
 
 
 const Head = () => {
@@ -11,6 +11,18 @@ const Head = () => {
     const currentDate = new Date()
     const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
     const currentDay= currentDate.getDate()
+
+    const navigate=useNavigate()
+
+    const logout = () => {
+        // Clear token and user data from localStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        
+        // Redirect or perform any other action after logout
+        navigate('/'); // Redirect to the login page, assuming you have a route for it
+        console.log('logged out succesfully')
+      };
 
   return (
     <div className={styles.wrapper}>
@@ -29,8 +41,9 @@ const Head = () => {
             </div>
             <div className={styles.dots}>
             <Menu />
+           
             </div>
-
+            <button  className='btn btn-danger btn-lg' onClick={logout}>Log Out</button>
         </div>
 
      
