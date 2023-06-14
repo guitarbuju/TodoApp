@@ -1,31 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6vh;
+}
 
-.inputData{
-    border:1px solid black;
-    margin-top: 20vh;
-width:40vh;  
-display:flex;
-flex-direction: column;
-justify-content: center;
-padding: 2vh;
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
-.buttons{
-    padding:2vh;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    gap:1vh;
+.title {
+  font-family: "Kaushan Script", cursive;
+  margin-bottom: 20px;
+font-size: 45px;
 }
 
-.dainput{
-   
-padding-bottom: 2vh;
+.img {
+  width: 90vh;
+  animation: slidein 1s ease-in-out 1;
 }
-.signin{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-    color:blue
+
+@keyframes slidein {
+  0% {
+    margin-left: -1050px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
+.form {
+  width: 60vh;
+  animation: appear 4s linear 1;
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.inputData {
+  margin-top: 20vh;
+  width: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2vh;
+}
+
+.buttons {
+  padding: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vh;
+}
+
+.dainput {
+  padding-bottom: 2vh;
+  text-align: left;
+}
+.signin {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  color: blue;
 }

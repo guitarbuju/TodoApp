@@ -22,7 +22,7 @@ const Spinner = () => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.ver}>Thank You for visiting....</h1>
+        <h1 className={styles.ver}>Thank You See U soon !!....</h1>
         <h1 className={styles.loader}></h1>
       </div>
     </div>

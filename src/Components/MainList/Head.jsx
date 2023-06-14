@@ -45,7 +45,7 @@ const Head = () => {
            
             </div>
 
-             <button  className='btn btn-danger btn-lg' onClick={logout}>Log Out</button>
+             <button  className="btn btn-outline-danger"onClick={logout}>Log Out</button>
         </div>
 
       
