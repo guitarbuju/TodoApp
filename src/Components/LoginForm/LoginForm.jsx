@@ -28,7 +28,7 @@ const navigate=useNavigate()
       localStorage.setItem('token', token);
       localStorage.setItem('user', user);
 
-      navigate('/today')
+      navigate('/spinner2')
 
       console.log('Logged in successfully');
     } catch (error) {

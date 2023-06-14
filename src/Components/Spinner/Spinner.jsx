@@ -6,7 +6,7 @@ const Spinner = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    const delay = 3500; // Delay in milliseconds
+    const delay = 2000; // Delay in milliseconds
 
     const timeoutId = setTimeout(() => {
       // Navigate to another component after the specified delay

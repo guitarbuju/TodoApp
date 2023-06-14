@@ -10,6 +10,8 @@ import MainForm from './Components/SignIn/MainForm'
 import Header from './Components/Header/Header'
 import Spinner from './Components/Spinner/Spinner'
 import Spinner2 from './Components/Spinner/Spinner2'
+import NoMatch from './Components/NoMatch/NoMatch'
+
 
 function App() {
   
@@ -29,6 +31,7 @@ function App() {
         <Route path='/allTasks' element={<AllTasks /> }/>
         <Route path='/spinner' element={<Spinner /> }/>
         <Route path='/spinner2' element={<Spinner2 /> }/>
+        <Route path='*' element={<NoMatch/>}/>
       </Routes>
      
     </div>
