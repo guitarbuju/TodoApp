@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap');
+
+
 .wrapper{
     display :flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:3vh
+    gap:3vh;
+   
 }
 
 .loader {
@@ -26,4 +30,7 @@
     }
     } 
 
-    .ver{color:red;}
+    .ver{
+        font-family: 'Roboto', sans-serif;
+        color:black;
+    }

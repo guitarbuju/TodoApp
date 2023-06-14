@@ -13,7 +13,7 @@ const Head = () => {
     const currentDay= currentDate.getDate()
 
     const navigate=useNavigate()
-
+    const user = localStorage.getItem('user'); 
     const logout = () => {
         // Clear token and user data from localStorage
         localStorage.removeItem('token');
@@ -44,7 +44,8 @@ const Head = () => {
             <Menu />
            
             </div>
-            <button  className='btn btn-danger btn-lg' onClick={logout}>Log Out</button>
+
+            {user ? <button  className='btn btn-danger btn-lg' onClick={logout}>Log Out</button>: ''}
         </div>
 
       
