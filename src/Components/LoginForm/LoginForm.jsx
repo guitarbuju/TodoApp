@@ -49,7 +49,7 @@ const LoginForm = () => {
 
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputData}>
-          <h2>Log In</h2>
+          <h1>Log In</h1>
           <div className={styles.dainput}>
             <label htmlFor="email" style={{ fontWeight: "bolder" }}>
               EMAIL
@@ -75,9 +75,21 @@ const LoginForm = () => {
 
         <div className={styles.buttons}>
           <p className="signin">
-            <Link to="/signIN">Not a member yet?. Please register</Link>
+            <Link to="/signIN">Not a member yet?. Please <span style={{
+                textDecoration: "underline",
+                textShadow: "0.5px 0.5px 0.5px gray",
+              }}>REGISTER</span></Link>
             <br />
-            wanna go back <Link style={{textDecoration:'underline',textShadow:'0.5px 0.5px 0.5px gray'}} to="/">HOME?</Link>
+            wanna go back{" "}
+            <Link
+              style={{
+                textDecoration: "underline",
+                textShadow: "0.5px 0.5px 0.5px gray",
+              }}
+              to="/"
+            >
+              HOME?
+            </Link>
           </p>
 
           <button type="submit" id="login" className="btn btn-warning">
