@@ -42,7 +42,7 @@ const LoginForm = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleContainer}>
-        <h1 className={styles.title}>ToDo AppList </h1>
+        <h1 className={styles.title}><span style={{color:'#fec734',textShadow:'0.5px 0.5px 0.5px gray'}}>ToDo App</span>List </h1>
         <h2 className={styles.title}>Welcome Back !!! come on IN </h2>
         <img className={styles.img} src={happy2} />
       </div>

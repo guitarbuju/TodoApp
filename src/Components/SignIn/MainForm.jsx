@@ -1,89 +1,114 @@
-import styles from './mainForm.module.css'
+import styles from "./mainForm.module.css";
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
-import { useForm } from "react-hook-form"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import happy3 from "../../assets/happy3.jpeg";
 
-
 const MainForm = () => {
-// eslint-disable-next-line no-unused-vars
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
- const navigate=useNavigate()
  
- const onSubmit= async(data)=>{
-  console.log(data)
- 
-  try {
-    const response = await axios.post('http://localhost:3006/register', data);
-    const { token,user } = response.data;
-    console.log(response.data) 
-    // Save the token to local storage
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(user));
+  const {
+    register,
+    handleSubmit,
+     // eslint-disable-next-line no-unused-vars
+    formState: { errors },
+  } = useForm();
 
-    navigate('/spinner2')
+  const navigate = useNavigate();
 
-    console.log('Register successfull');
-  } catch (error) {
-    console.error(error);
-  }
-}
+  const onSubmit = async (data) => {
+    console.log(data);
 
- 
- 
+    try {
+      const response = await axios.post("http://localhost:3006/register", data);
+      const { token, user } = response.data;
+      console.log(response.data);
+      // Save the token to local storage
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
 
+      navigate("/spinner2");
+
+      console.log("Register successfull");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
-    <div className={styles.titleContainer}>
-        <h1 className={styles.title}>ToDo AppList </h1>
+      <div className={styles.titleContainer}>
+        <h1 className={styles.title} >
+          <span
+            style={{ color: "#fec734", textShadow: "0.5px 0.5px 0.5px gray"  }}
+          >
+            ToDo App
+          </span>
+          List
+        </h1>
         <h2 className={styles.title}>!!! come on IN !!! Register</h2>
         <img className={styles.img} src={happy3} />
       </div>
-    <form name='regForm' onSubmit={handleSubmit(onSubmit)} >
-      <div className={styles.inputData}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.inputData}>
           <h1>Sign In</h1>
-        <div className={styles.dainput}>
-            <label htmlFor="name" style={{fontWeight:'bolder'}}>NAME</label>
-            <input  className='form-control'  
-              type='text' placeholder= 'input your username'
-             {...register("name", { required: true })}
-             />
-        </div>
-        
-        <div className={styles.dainput}>
-            <label htmlFor="email" style={{fontWeight:'bolder'}}>EMAIL</label>
-            <input  className="form-control"
-             type='email' placeholder='input your email'
-            {...register("email", { required: true })}
+          <div className={styles.dainput}>
+            <label htmlFor="name" style={{ fontWeight: "bolder" }}>
+              NAME
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="input your username"
+              {...register("name", { required: true })}
             />
-        </div>
-        
-       <div className={styles.dainput}>
-            <label htmlFor="password" style={{fontWeight:'bolder'}}>PASSWORD</label>
-            <input  className="form-control"
-            type='password'  placeholder='input your password'
-            {...register("password", { required: true })}
-            />
-       </div>
-        
-     </div>
+          </div>
 
-     <div className= {styles.buttons}>
-          
-          <button type='submit' className="btn btn-warning">Sign In</button>
-          <p  >
-          <Link  to="/login">
-            Already a member? please <span style={{
-                textDecoration: "underline",
-                textShadow: "0.5px 0.5px 0.5px gray",
-              }}>LOG IN</span>
-          </Link> <br />
+          <div className={styles.dainput}>
+            <label htmlFor="email" style={{ fontWeight: "bolder" }}>
+              EMAIL
+            </label>
+            <input
+              className="form-control"
+              type="email"
+              placeholder="input your email"
+              {...register("email", { required: true })}
+            />
+          </div>
+
+          <div className={styles.dainput}>
+            <label htmlFor="password" style={{ fontWeight: "bolder" }}>
+              PASSWORD
+            </label>
+            <input
+              className="form-control"
+              type="password"
+              placeholder="input your password"
+              {...register("password", { required: true })}
+            />
+          </div>
+        </div>
+
+        <div className={styles.buttons}>
+          <button type="submit" className="btn btn-warning">
+            Sign In
+          </button>
+          <p>
+            <Link to="/login">
+              Already a member? please{" "}
+              <span
+                style={{
+                  textDecoration: "underline",
+                  textShadow: "0.5px 0.5px 0.5px gray",
+                }}
+              >
+                LOG IN
+              </span>
+            </Link>{" "}
+            <br />
             wanna go back{" "}
             <Link
               style={{
@@ -95,13 +120,10 @@ const MainForm = () => {
               HOME?
             </Link>
           </p>
+        </div>
+      </form>
+    </div>
+  );
+};
 
-     </div>
-         
-
-      
-    </form>
-  </div>
-)}
-
-export default MainForm
+export default MainForm;
