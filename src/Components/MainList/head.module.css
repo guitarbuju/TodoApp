@@ -19,6 +19,10 @@
     gap:3vh;
 }
 
+.nohead{
+    display:none;
+}
+
 .date{
     font-family: 'Roboto', sans-serif;
     display:flex;
@@ -60,10 +64,13 @@
 .today{font-family: 'Roboto', sans-serif;}
     
 .dots{
-    margin-left: 40vh;
+    display:flex;
+    gap:4vh;
+    margin-left: 10vh;
     font-size: 20px;
     color: #CBCBCB;
     text-shadow: 1px 1px 1px gray;
     margin-top: -30px;
     letter-spacing: 0.5px;
+    width:100px;
 }

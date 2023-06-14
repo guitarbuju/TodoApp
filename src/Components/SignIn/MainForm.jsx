@@ -18,14 +18,15 @@ const MainForm = () => {
  
   try {
     const response = await axios.post('http://localhost:3006/register', data);
-    const { token } = response.data;
+    const { token,user } = response.data;
     console.log(response.data) 
     // Save the token to local storage
     localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
 
-    navigate('/today')
+    navigate('/spinner2')
 
-    console.log('Logged in successfully');
+    console.log('Register successfull');
   } catch (error) {
     console.error(error);
   }
