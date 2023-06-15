@@ -25,6 +25,44 @@ const Completed = () => {
   useEffect(() => {
     daList();
   }, [Lista]);
+
+
+  /////PATCH TASKS TO DONE
+  const [_id, setId] = useState("");
+
+  const handleChange = (event) => {
+    setId(event.target.value);
+    event.target.checked = false;
+  };
+
+  useEffect(() => {
+    if (_id) {
+      PatchNew1();
+    }
+  }, [_id]);
+
+  const PatchNew1 = async () => {
+    
+    const token = localStorage.getItem('token')
+
+    const requestedOptions = {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json",
+                 "authorization":`Bearer ${token}` 
+                },
+    };
+
+    const response = await axios.patch(
+      `http://Localhost:3006/done/${_id}`,
+      requestedOptions
+    );
+    const data = await response.data;
+    console.log(data);
+    if (response.ok) {
+      // If the patch request is successful, update the list
+      daList();
+    }
+  };
   
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -45,10 +83,18 @@ const Completed = () => {
          
             {ProgressList.map((element, index) => (
               <li
-                
+               
                 key={index}
-                className={ styles.element }
+                className={!element.done ? styles.element : styles.done}
               >
+                <div className={styles.inputWrapper}>
+                  <input
+                    value={element._id}
+                    onChange={handleChange}
+                    disabled={element.done ? "disabled" : ""}
+                    type="radio"
+                  />
+              </div>
               <p>{element.task}</p>
               <div className={styles.statusWrapper}>
                   <p className={styles.formatDate}>
