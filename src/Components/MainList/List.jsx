@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { useState, useEffect, React } from "react";
 import styles from "./list.module.css";
-
+import happy from '../../assets/Happy-People-PNG.png'
 import axios from "axios";
 
-const List = () => {
+const List = ({showForm}) => {
   const [Lista, setLista] = useState([]);
 
   ///////////////FETCH LISTA GENERAL///////////////
@@ -130,9 +130,13 @@ const List = () => {
   };
 
   return (
-    <>
-      <h4>List of Tasks due Today</h4>
+    <div className={styles.supercontainer}>
+ 
+ <img src={happy} style={{ display: showForm ? 'none' : 'block' }} />
+      <div className={styles.superwrapper} style={{ maxHeight: showForm ? '18vh' : '60vh' }}>
+      <h3>List of tasks due Today</h3>
       <div className={styles.wrapper}>
+     
         {Lista.length === 0 ? (
           <h1>No List Available Yet</h1>
         ) : (
@@ -173,7 +177,8 @@ const List = () => {
           </ul>
         )}
       </div>
-    </>
+      </div>
+    </div>
   );
 };
 

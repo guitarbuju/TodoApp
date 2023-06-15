@@ -69,7 +69,7 @@ const Trigger = () => {
   return (
     <>
     
-      <List />
+      <List showForm={showForm}/>
       <div className={styles.wrapper}>
       <p className={styles.createNew} 
       onClick={handleToggle}>

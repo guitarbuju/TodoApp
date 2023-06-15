@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { useState, useEffect, React } from "react";
-import styles from "./list.module.css";
+import styles from "./Alltasks.module.css";
 
 import axios from "axios";
 
