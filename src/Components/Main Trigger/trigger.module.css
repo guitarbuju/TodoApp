@@ -51,7 +51,7 @@ input[type="date"]:hover{
 
 }
 .createNew{
-    text-align: left;
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 20px;

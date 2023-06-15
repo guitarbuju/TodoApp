@@ -4,7 +4,7 @@
     display:flex;
     flex-direction: column;
     padding-left: 2vh;
-    max-height: 100vh;
+    max-height: 60vh;
     overflow-y: auto;
     animation: appear 2s linear 1;
  
@@ -16,7 +16,7 @@
     align-items:flex-start;
     list-style-type: none;
     text-decoration: none;
-    height: 100vh;
+    height: 60vh;
     width: 600px;
    
     
