@@ -2,24 +2,26 @@
 import { useState, useEffect, React } from "react";
 import styles from "./list.module.css";
 
-import axios from 'axios'
+import axios from "axios";
 
 const List = () => {
   const [Lista, setLista] = useState([]);
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-
-
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
 
     const requestedOptions = {
       method: "GET",
-      headers: { "Content-Type": "application/json",
-                 "authorization":`Bearer ${token}` 
-                },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
     };
-    const response = await axios.get("http://Localhost:3006/today",requestedOptions);
+    const response = await axios.get(
+      "http://Localhost:3006/today",
+      requestedOptions
+    );
     const data = await response.data;
     const sortedList = data.sort((a, b) => b - a).reverse();
 
@@ -45,14 +47,14 @@ const List = () => {
   }, [_id]);
 
   const PatchNew1 = async () => {
-    
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
 
     const requestedOptions = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json",
-                 "authorization":`Bearer ${token}` 
-                },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
     };
 
     const response = await axios.patch(
@@ -66,20 +68,20 @@ const List = () => {
       daList();
     }
   };
-  
+
   // If the patch request is successful, update the list
 
   //////////////////////////////////DELETE TASK///////////////////////
 
   const handleDelete = async (_id) => {
-
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
 
     const requestedOptions = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json",
-                 "authorization":`Bearer ${token}` 
-                },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
     };
 
     const response = await axios.delete(
@@ -97,14 +99,14 @@ const List = () => {
   ////////////////////////// PATCH IN PROGRESS///////////////////////
 
   const InProgress = async (_id) => {
-   
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
 
     const requestedOptions = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json",
-                 "authorization":`Bearer ${token}` 
-                },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
     };
 
     const response = await axios.patch(
@@ -129,10 +131,8 @@ const List = () => {
 
   return (
     <>
-      
-       <h4>List of Tasks due Today</h4>
+      <h4>List of Tasks due Today</h4>
       <div className={styles.wrapper}>
-     
         {Lista.length === 0 ? (
           <h1>No List Available Yet</h1>
         ) : (
@@ -173,7 +173,6 @@ const List = () => {
           </ul>
         )}
       </div>
-    
     </>
   );
 };
