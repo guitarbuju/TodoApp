@@ -123,8 +123,18 @@ input[type="radio"] {
    
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    font-size: 15px;
-    color: #4E4E4E;
+    color:#3D82EB;
+    font-size: small;
+    line-height: 70px;
+
+  }
+
+  li .formatDate:hover{
+   
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    color:#3D82EB;
+    font-size:medium;
     line-height: 70px;
 
   }

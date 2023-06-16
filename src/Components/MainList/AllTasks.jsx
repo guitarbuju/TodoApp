@@ -155,7 +155,9 @@ const List = () => {
                 <div className={styles.statusWrapper}>
                   <p className={styles.formatDate}>
                  
-                    update:{formatDate(element.date)} 
+                    duedate:{formatDate(element.date)} 
+                    <span className={styles.formatDate}
+                    >updated:{formatDate(element.updatedAt)} </span>
                     <span>{element.category}</span>
                   </p>
                   {element.inProgress ? 
