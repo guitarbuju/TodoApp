@@ -6,6 +6,7 @@ import axios from 'axios'
 
 const Completed = () => {
   const [Lista, setLista] = useState([]);
+  
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
@@ -55,6 +56,7 @@ const Completed = () => {
               <div className={styles.statusWrapper}>
                   <p className={styles.formatDate}>
                     completed:{formatDate(element.date)}
+                    <span>{element.category}</span>
                   </p>
               </div>    
               </li>

@@ -60,6 +60,11 @@
 
 }
 
+.statusWrapper span{
+  padding-left: 6px;
+  color:#3D82EB
+}
+
 .done{
     display: flex;
     flex-direction: row;
@@ -122,9 +127,10 @@ input[type="radio"] {
     text-decoration: underline;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: small;
     color:blue;
     line-height: 70px;
+    animation: appear 0.7s linear infinite;
 
   }
 

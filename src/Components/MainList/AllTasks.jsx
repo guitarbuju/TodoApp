@@ -154,13 +154,17 @@ const List = () => {
                 </div>
                 <div className={styles.statusWrapper}>
                   <p className={styles.formatDate}>
-                    update:{formatDate(element.date)}
+                 
+                    duedate:{formatDate(element.date)} 
+                    <span className={styles.formatDate}
+                    >updated:{formatDate(element.updatedAt)} </span>
+                    <span>{element.category}</span>
                   </p>
-                  {element.inProgress ? (
-                    <p className={styles.formatProgress}>in progress</p>
-                  ) : (
-                    <p className={styles.formatDate}></p>
-                  )}
+                  {element.inProgress ? 
+                    <p className={styles.formatProgress}>in progress   </p>
+                   : 
+                   <p></p>
+                  }
                   <div
                     onClick={() => handleDelete(element._id)}
                     className={styles.close_button}

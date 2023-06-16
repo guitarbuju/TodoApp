@@ -60,6 +60,12 @@
 
 }
 
+.statusWrapper span{
+  padding-left: 6px;
+  color:#3D82EB;
+  font-size: small;
+}
+
 .done{
     display: flex;
     flex-direction: row;
