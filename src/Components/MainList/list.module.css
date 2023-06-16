@@ -81,9 +81,10 @@ img{
     align-items:flex-start;
     gap:1vh;
 }
-.statusWrapper span{
+ span{
   padding-left: 6px;
-  color:#3D82EB
+  color:#3D82EB;
+  font-size: small;
 }
 .done{
     display: flex;
