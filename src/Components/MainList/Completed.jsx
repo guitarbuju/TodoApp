@@ -55,6 +55,7 @@ const Completed = () => {
               <div className={styles.statusWrapper}>
                   <p className={styles.formatDate}>
                     completed:{formatDate(element.date)}
+                    <span>{element.category}</span>
                   </p>
               </div>    
               </li>

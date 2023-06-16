@@ -99,6 +99,7 @@ const Completed = () => {
               <div className={styles.statusWrapper}>
                   <p className={styles.formatDate}>
                     since:{formatDate(element.date)}
+                    <span>{element.category}</span>
                   </p>
                   </div>
               </li>

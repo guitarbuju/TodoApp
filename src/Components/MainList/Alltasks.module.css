@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 .wrapper{
  
     display:flex;
@@ -61,6 +64,13 @@
 
 }
 
+  span{
+    padding-left: 6px;
+    color:#3D82EB;
+    font-size: small;
+}
+
+
 .done{
     display: flex;
     flex-direction: row;
@@ -120,12 +130,13 @@ input[type="radio"] {
   }
  
   .formatProgress{
-    text-decoration: underline;
+    
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: small;
     color:blue;
     line-height: 70px;
+    animation: appear 0.7s linear infinite;
 
   }
 
