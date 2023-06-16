@@ -6,6 +6,7 @@ import axios from 'axios'
 
 const Completed = () => {
   const [Lista, setLista] = useState([]);
+  
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {

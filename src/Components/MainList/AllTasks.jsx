@@ -156,7 +156,7 @@ const List = () => {
                   <p className={styles.formatDate}>
                  
                     update:{formatDate(element.date)} 
-                 
+                    <span>{element.category}</span>
                   </p>
                   {element.inProgress ? 
                     <p className={styles.formatProgress}>in progress   </p>
