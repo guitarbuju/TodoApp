@@ -8,6 +8,7 @@ import axios from 'axios'
 //import Listado from '../../daList/'//se importa la funcion que trae el array con la data desde el fichero de funciones
 
 const Trigger = () => {
+  const today = new Date().toISOString().split("T")[0]
   const [showForm, setShowForm] = useState(false)
 
   const handleToggle = () => {
@@ -24,6 +25,7 @@ const Trigger = () => {
   const onSubmit = (predata) => {
     const done = false;
     const inProgress = false;
+    
     const ProperDate = new Date(predata.date).toISOString();
    console.log(ProperDate)
  
@@ -83,7 +85,7 @@ const Trigger = () => {
           <div className="form-group">
             <div>
             <label>Add Due Date </label>
-            <input type="date" className="form-control" {...register("date")} />
+            <input type="date" className="form-control" {...register("date")} defaultValue={today}/>
 
 
             </div>
