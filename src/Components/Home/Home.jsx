@@ -12,7 +12,7 @@ const Home = () => {
           <h1 className={Styles.title}>
             Welcome to
             <span
-              style={{ color: "#fec734", textShadow: "0.5px 0.5px 0.5px gray" }}
+              style={{ color: "#fec734", textShadow: "0.5px 0.5px 0.5px gray",fontSize:'70px' }}
             >
               Todo App
             </span>
