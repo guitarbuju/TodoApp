@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.css";
 import List from "../MainList/List"; //Este es el componente con la lista
 import axios from 'axios'
+import happy from '../../assets/Happy-People-PNG.png'
 //import Listado from '../../daList/'//se importa la funcion que trae el array con la data desde el fichero de funciones
 
 const Trigger = () => {
@@ -70,14 +71,16 @@ const Trigger = () => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
     
-      <List showForm={showForm}/>
+    
       <div className={styles.wrapper}>
       <p className={styles.createNew} 
       onClick={handleToggle}>
       <span>&#x2A01;</span>
       Create new item</p>
+
+      { !showForm && <img src={happy}/>}
       
       {showForm && (
 
@@ -113,8 +116,8 @@ const Trigger = () => {
           </div>
         </form>)}
       </div>
-    
-    </>
+      <List showForm={showForm}/>
+    </div>
   );
 };
 

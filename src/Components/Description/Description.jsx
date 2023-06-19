@@ -36,7 +36,7 @@ const Description = ({ id, Lista, ShowDesc, SetShowDesc }) => {
         {foundElement && (
           <>
             <li>
-              <h1>{foundElement.task}</h1>
+              <h2>{foundElement.task}</h2>
             </li>
             <li>Id: {foundElement._id}</li>
             <li>Category: {foundElement.category}</li>
