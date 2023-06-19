@@ -11,6 +11,11 @@ import Spinner from "./Components/Spinner/Spinner";
 import Spinner2 from "./Components/Spinner/Spinner2";
 import NoMatch from "./Components/NoMatch/NoMatch";
 import Home from "./Components/Home/Home";
+import Categories from "./Components/Categories/Categories";
+import Personal from "./Components/Categories/Personal";
+import Work from "./Components/Categories/Work";
+import Others from "./Components/Categories/Others";
+
 
 function App() {
   return (
@@ -28,6 +33,11 @@ function App() {
         <Route path="/allTasks" element={<AllTasks />} />
         <Route path="/spinner" element={<Spinner />} />
         <Route path="/spinner2" element={<Spinner2 />} />
+        <Route path="/categories" element={<Categories/>} >
+            <Route path="personal" element = {<Personal />} />
+            <Route path="work" element = {<Work />} />
+            <Route path="others" element = {<Others />} />
+        </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

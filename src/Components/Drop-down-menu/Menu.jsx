@@ -34,7 +34,8 @@ const Menu = () => {
           <li><NavLink to="/today">Today`s</NavLink></li>
           <li><NavLink to="/inProgress">In Progress</NavLink></li>
           <li><NavLink to="/completed">Completed</NavLink></li>
-          <li><NavLink to="/allTasks">all Tasks</NavLink></li>
+          <li><NavLink to="/allTasks">All Tasks</NavLink></li>
+          <li><NavLink to="/categories">Categories</NavLink></li>
         </ul>
       )}
     </div>

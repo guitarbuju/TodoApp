@@ -164,7 +164,7 @@ const List = () => {
                       disabled={element.done ? "disabled" : ""}
                       type="radio"
                     />
-                    <p data-id={element._id} onClick={handleDescription}>
+                    <p className={styles.toggler} data-id={element._id} onClick={handleDescription}>
                       &#x2630;
                     </p>
                     <p>{element.task}</p>
