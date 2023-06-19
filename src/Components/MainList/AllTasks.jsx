@@ -7,7 +7,7 @@ import Description from "../Description/Description";
 
 const List = () => {
   const [Lista, setLista] = useState([]);
-
+  const [ShowDesc,SetShowDesc]=useState(false)
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
     const token = localStorage.getItem("token");
@@ -135,6 +135,7 @@ const List = () => {
   const handleDescription = (event) => {
     const id = event.target.dataset.id;
     setId2(id);
+    SetShowDesc(true)
   };
 
   return (
@@ -190,8 +191,10 @@ const List = () => {
           )}
         </div>
       </div>
-      <Description id={id2} Lista={Lista} />
+      {ShowDesc && <Description id={id2} Lista={Lista} ShowDesc={ShowDesc} SetShowDesc={SetShowDesc}/>}
+    
     </div>
+      
   );
 };
 
