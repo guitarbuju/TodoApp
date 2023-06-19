@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import { useState, useEffect, React } from "react";
 import styles from "./Alltasks.module.css";
-
+import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
+import Description from "../Description/Description";
 
 const List = () => {
   const [Lista, setLista] = useState([]);
-
+  const [ShowDesc,SetShowDesc]=useState(false)
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
     const token = localStorage.getItem("token");
@@ -128,56 +129,72 @@ const List = () => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US");
   };
+  ///// Id para el outlet de descripcion
+  const [id2, setId2] = useState("");
+
+  const handleDescription = (event) => {
+    const id = event.target.dataset.id;
+    setId2(id);
+    SetShowDesc(true)
+  };
 
   return (
-    <>
-      <h4>List of all Tasks </h4>
-      <div className={styles.wrapper}>
-        {Lista.length === 0 ? (
-          <h1>No List Available Yet</h1>
-        ) : (
-          <ul className={styles.list_container}>
-            {Lista.map((element, index) => (
-              <li
-                onDoubleClick={() => InProgress(element._id)}
-                key={index}
-                className={!element.done ? styles.element : styles.done}
-              >
-                <div className={styles.inputWrapper}>
-                  <input
-                    value={element._id}
-                    onChange={handleChange}
-                    disabled={element.done ? "disabled" : ""}
-                    type="radio"
-                  />
-                  <p>{element.task}</p>
-                </div>
-                <div className={styles.statusWrapper}>
-                  <p className={styles.formatDate}>
-                 
-                    duedate:{formatDate(element.date)} 
-                    <span className={styles.formatDate}
-                    >updated:{formatDate(element.updatedAt)} </span>
-                    <span>{element.category}</span>
-                  </p>
-                  {element.inProgress ? 
-                    <p className={styles.formatProgress}>in progress   </p>
-                   : 
-                   <p></p>
-                  }
-                  <div
-                    onClick={() => handleDelete(element._id)}
-                    className={styles.close_button}
-                  >
-                    &#9746;
+    <div className={styles.supercontainer}>
+      <div className={styles.container}>
+      
+          <h4>List of all Tasks </h4>
+         
+       
+
+        <div className={styles.wrapper}>
+          {Lista.length === 0 ? (
+            <h1>No List Available Yet</h1>
+          ) : (
+            <ul className={styles.list_container}>
+              {Lista.map((element, index) => (
+                <li
+                  onDoubleClick={() => InProgress(element._id)}
+                  key={index}
+                  className={!element.done ? styles.element : styles.done}
+                >
+                  <div className={styles.inputWrapper}>
+                    <input
+                      value={element._id}
+                      onChange={handleChange}
+                      disabled={element.done ? "disabled" : ""}
+                      type="radio"
+                    />
+                    <p data-id={element._id} onClick={handleDescription}>
+                      &#x2630;
+                    </p>
+                    <p>{element.task}</p>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+                  <div className={styles.statusWrapper}>
+                    <p className={styles.formatDate}>
+                      duedate:{formatDate(element.date)}
+                    </p>
+                    {element.inProgress ? (
+                      <p className={styles.formatProgress}>in progress </p>
+                    ) : (
+                      <p></p>
+                    )}
+                    <div
+                      onClick={() => handleDelete(element._id)}
+                      className={styles.close_button}
+                    >
+                      &#9746;
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
-    </>
+      {ShowDesc && <Description id={id2} Lista={Lista} ShowDesc={ShowDesc} SetShowDesc={SetShowDesc}/>}
+    
+    </div>
+      
   );
 };
 
