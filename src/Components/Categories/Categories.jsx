@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Image from "../../assets/gilb.jpeg";
+import Image from "../../assets/categories.003.png";
 import Styles from "./categories.module.css";
 
 const Categories = () => {
