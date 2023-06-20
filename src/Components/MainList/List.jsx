@@ -8,10 +8,13 @@ import Description from "../Description/Description";
 const List = ({showForm}) => {
   const [Lista, setLista] = useState([]);
   const [ShowDesc,SetShowDesc]=useState(false)
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("user");
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
+    // const user = localStorage.getItem("user");
 
     const requestedOptions = {
       method: "GET",
@@ -21,13 +24,13 @@ const List = ({showForm}) => {
       },
     };
     const response = await axios.get(
-      "http://Localhost:3006/today",
-      requestedOptions
-    );
-    const data = await response.data;
-    const sortedList = data.sort((a, b) => b - a).reverse();
-
-    setLista(sortedList);
+      ` http://Localhost:3006/today/${user}`,
+       requestedOptions
+     );
+     const data = await response.data;
+     const sortedList = data.sort((a, b) => b - a).reverse();
+ 
+     setLista(sortedList);
   };
 
   useEffect(() => {
@@ -49,7 +52,7 @@ const List = ({showForm}) => {
   }, [_id]);
 
   const PatchNew1 = async () => {
-    const token = localStorage.getItem("token");
+   
 
     const requestedOptions = {
       method: "PATCH",
@@ -60,7 +63,7 @@ const List = ({showForm}) => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/done/${_id}`,
+      `http://Localhost:3006/done/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -76,7 +79,7 @@ const List = ({showForm}) => {
   //////////////////////////////////DELETE TASK///////////////////////
 
   const handleDelete = async (_id) => {
-    const token = localStorage.getItem("token");
+   
 
     const requestedOptions = {
       method: "DELETE",
@@ -87,7 +90,7 @@ const List = ({showForm}) => {
     };
 
     const response = await axios.delete(
-      `http://Localhost:3006/delete/${_id}`,
+      `http://Localhost:3006/delete/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -101,7 +104,7 @@ const List = ({showForm}) => {
   ////////////////////////// PATCH IN PROGRESS///////////////////////
 
   const InProgress = async (_id) => {
-    const token = localStorage.getItem("token");
+   
 
     const requestedOptions = {
       method: "PATCH",
@@ -112,7 +115,7 @@ const List = ({showForm}) => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/inprogress/${_id}`,
+      `http://Localhost:3006/inprogress/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;

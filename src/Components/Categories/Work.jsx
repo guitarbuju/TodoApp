@@ -7,9 +7,13 @@ import Description from "../Description/Description";
 const Work = () => {
   const [Lista, setLista] = useState([]);
   const [ShowDesc,SetShowDesc]=useState(false)
+ const token = localStorage.getItem("token");
+ const user = localStorage.getItem('user')
+
+
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    const token = localStorage.getItem("token");
+    
 
     const requestedOptions = {
       method: "GET",
@@ -19,7 +23,7 @@ const Work = () => {
       },
     };
     const response = await axios.get(
-      "http://Localhost:3006/",
+      `http://Localhost:3006/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -48,7 +52,7 @@ const Work = () => {
   }, [_id]);
 
   const PatchNew1 = async () => {
-    const token = localStorage.getItem("token");
+   
 
     const requestedOptions = {
       method: "PATCH",
@@ -59,7 +63,7 @@ const Work = () => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/done/${_id}`,
+      `http://Localhost:3006/done/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -75,7 +79,7 @@ const Work = () => {
   //////////////////////////////////DELETE TASK///////////////////////
 
   const handleDelete = async (_id) => {
-    const token = localStorage.getItem("token");
+    
 
     const requestedOptions = {
       method: "DELETE",
@@ -86,7 +90,7 @@ const Work = () => {
     };
 
     const response = await axios.delete(
-      `http://Localhost:3006/delete/${_id}`,
+      `http://Localhost:3006/delete/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -100,7 +104,7 @@ const Work = () => {
   ////////////////////////// PATCH IN PROGRESS///////////////////////
 
   const InProgress = async (_id) => {
-    const token = localStorage.getItem("token");
+   
 
     const requestedOptions = {
       method: "PATCH",
@@ -111,7 +115,7 @@ const Work = () => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/inprogress/${_id}`,
+      `http://Localhost:3006/inprogress/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
