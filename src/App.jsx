@@ -34,7 +34,8 @@ function App() {
         <Route path="/spinner" element={<Spinner />} />
         <Route path="/spinner2" element={<Spinner2 />} />
         <Route path="/categories" element={<Categories/>} >
-            <Route index element = {<Personal />} />
+            <Route index  element = {<Personal />} />
+            <Route index  path='personal' element = {<Personal />} />
             <Route  path="work" element = {<Work />} />
             <Route path="others" element = {<Others />} />
         </Route>

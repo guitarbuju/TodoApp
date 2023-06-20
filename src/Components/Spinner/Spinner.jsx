@@ -6,6 +6,7 @@ const Spinner = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
+    
     const delay = 2000; // Delay in milliseconds
 
     const timeoutId = setTimeout(() => {
