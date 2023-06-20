@@ -28,7 +28,7 @@ const MainForm = () => {
       console.log(response.data);
       // Save the token to local storage
       localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", user.id);
 
       navigate("/spinner2");
 
