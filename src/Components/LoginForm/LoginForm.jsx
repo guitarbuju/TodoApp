@@ -8,7 +8,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import happy2 from "../../assets/happy2.jpeg";
 
-const LoginForm = () => {
+const LoginForm = () =>{
+
+  const [errorMessage, setErrorMessage] = useState("")
+
   // eslint-disable-next-line no-unused-vars
   const {
     register,
@@ -24,20 +27,24 @@ const LoginForm = () => {
 
     try {
       const response = await axios.post("http://localhost:3006/login", data);
-      const { token, user } = response.data;
+      const { token, user ,error} = response.data;
 
-      console.log(response.data);
+      console.log(response.data)
+      
       // Save the token to local storage
       localStorage.setItem("token", token);
       localStorage.setItem("user", user.id);
 
       navigate("/spinner2");
-
-      console.log("Logged in successfully");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+   
+  console.log("Logged in successfully");
+} catch (error) {
+  const errorMessage = error.response.data.error;
+  setErrorMessage(errorMessage)
+    console.error(errorMessage);
+    
+  }
+}
 
   return (
     <div className={styles.wrapper}>
@@ -70,6 +77,7 @@ const LoginForm = () => {
               className="form-control"
               {...register("password", { required: true })}
             />
+            {errorMessage && <span>{errorMessage}</span>}
           </div>
         </div>
 
