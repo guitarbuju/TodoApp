@@ -35,7 +35,7 @@
 .boxwrap {
   height: 60vh;
   width: 60vh;
-  
+  padding-bottom: 1vh;
   list-style-type: none;
   text-decoration: none;
   text-align: left;
