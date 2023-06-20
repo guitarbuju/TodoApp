@@ -12,12 +12,13 @@ const Completed = () => {
   const daList = async () => {
     
     const token= localStorage.getItem('token')
+    const user = localStorage.getItem('user')
     const config={
      headers: {Authorization:`Bearer ${token}` }
     }
    
 
-    const response = await axios.get("http://Localhost:3006/",config);
+    const response = await axios.get(`http://Localhost:3006/${user}`,config);
     const data = await response.data;
     const sortedList = data.sort((a, b) => b - a).reverse();
 
