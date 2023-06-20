@@ -1,14 +1,13 @@
-import { useState, useEffect} from "react";
-import styles from "../MainList/list.module.css"
+// eslint-disable-next-line no-unused-vars
+import { useState, useEffect, React } from "react";
+import styles from "../MainList/Alltasks.module.css"
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Description from "../Description/Description";
 
-
-const List = ({showForm}) => {
+const Personal = () => {
   const [Lista, setLista] = useState([]);
   const [ShowDesc,SetShowDesc]=useState(false)
-
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
     const token = localStorage.getItem("token");
@@ -21,11 +20,12 @@ const List = ({showForm}) => {
       },
     };
     const response = await axios.get(
-      "http://Localhost:3006/today",
+      "http://Localhost:3006/",
       requestedOptions
     );
     const data = await response.data;
-    const sortedList = data.sort((a, b) => b - a).reverse();
+    const personal=data.filter((e)=> e.category === "personal")
+    const sortedList = personal.sort((a, b) => b - a).reverse();
 
     setLista(sortedList);
   };
@@ -137,17 +137,13 @@ const List = ({showForm}) => {
     const id = event.target.dataset.id;
     setId2(id);
     SetShowDesc(true)
-
   };
 
   return (
-   
     <div className={styles.supercontainer}>
-  
-    
       <div className={styles.container}>
       
-          <h4>List of Today`sTasks </h4>
+          <h4>List of Personal Tasks </h4>
          
        
 
@@ -155,7 +151,7 @@ const List = ({showForm}) => {
           {Lista.length === 0 ? (
             <h1>No List Available Yet</h1>
           ) : (
-            <ul className={ styles.list_container}>
+            <ul className={styles.list_container}>
               {Lista.map((element, index) => (
                 <li
                   onDoubleClick={() => InProgress(element._id)}
@@ -203,5 +199,6 @@ const List = ({showForm}) => {
   );
 };
 
-export default List;
+export default Personal;
+
 

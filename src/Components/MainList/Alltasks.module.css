@@ -183,3 +183,8 @@ input[type="radio"] {
     opacity: 1;
   }
 }
+
+.toggler{
+  font-size: large;
+  color:red;
+}

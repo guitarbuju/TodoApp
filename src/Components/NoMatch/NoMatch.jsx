@@ -4,8 +4,16 @@ import styles from "../Spinner/spinner.module.css";
 
 const NoMatch = () => {
   const navigate = useNavigate();
-  
+  const logout = () => {
+    // Clear token and user data from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    
+   
+    console.log('logged out succesfully')
+  };
   useEffect(() => {
+    logout()
     const delay = 2000; // Delay in milliseconds
 
     const timeoutId = setTimeout(() => {

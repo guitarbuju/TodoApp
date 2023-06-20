@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap');
 
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2vh;
+}
+
 .wrapper{
     display:flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
    padding-right: 20vh;
+   width:500px;
 }
 label{
     font-family: 'Roboto', sans-serif;
