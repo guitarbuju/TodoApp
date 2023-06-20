@@ -2,7 +2,6 @@ import Trigger from "./Components/Main Trigger/Trigger";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Completed from "./Components/MainList/Completed";
-import InProgress from "./Components/MainList/InProgress";
 import AllTasks from "./Components/MainList/AllTasks";
 import LoginForm from "./Components/LoginForm/LoginForm";
 import MainForm from "./Components/SignIn/MainForm";
@@ -15,6 +14,7 @@ import Categories from "./Components/Categories/Categories";
 import Personal from "./Components/Categories/Personal";
 import Work from "./Components/Categories/Work";
 import Others from "./Components/Categories/Others";
+import CurrentTasks from "./Components/MainList/CurrentTaks";
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Route path="/signin" element={<MainForm />} />
         <Route path="/today" element={<Trigger />} />
         <Route path="/completed" element={<Completed />} />
-        <Route path="/inProgress" element={<InProgress />} />
+        <Route path="/inprogress" element={<CurrentTasks/>} />
         <Route path="/allTasks" element={<AllTasks />} />
         <Route path="/spinner" element={<Spinner />} />
         <Route path="/spinner2" element={<Spinner2 />} />
