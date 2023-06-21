@@ -87,7 +87,7 @@ const List = () => {
     };
 
     const response = await axios.delete(
-      `http://Localhost:3006/done/${_id}/${user}`,
+      `http://Localhost:3006/delete/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -112,7 +112,7 @@ const List = () => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/done/${_id}/${user}`,
+      `http://Localhost:3006/inprogress/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
