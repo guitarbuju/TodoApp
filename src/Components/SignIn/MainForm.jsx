@@ -43,7 +43,7 @@ const MainForm = () => {
       <div className={styles.titleContainer}>
         <h1 className={styles.title} >
           <span
-            style={{ color: "#fec734", textShadow: "0.5px 0.5px 0.5px gray"  }}
+            style={{ color: "#fec734", textShadow: "0.5px 0.5px 0.5px gray",fontSize: '45px' }}
           >
             ToDo App
           </span>

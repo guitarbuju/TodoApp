@@ -5,16 +5,18 @@
 .supercontainer{
   display:flex;
   align-items: center;
-  justify-content: center;
-  gap:7vh
+  justify-content: space-between;
+  gap:7vh;
+  
 }
 
  
 .wrapper{
  
     display:flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    padding-left: 2vh;
     max-height: 60vh;
     overflow-y: auto;
     animation: appear 2s linear 1;
@@ -23,8 +25,7 @@
 .list_container{
     display:flex;
     flex-direction: column;
-    justify-content:flex-start;
-    align-items:flex-start;
+    
     list-style-type: none;
     text-decoration: none;
     height: 60vh;

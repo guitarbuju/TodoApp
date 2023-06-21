@@ -6,27 +6,28 @@
     align-items: center;
     justify-content: center;
     gap:2vh;
+    width: 1000px;
 }
 
 .wrapper{
     display:flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-   padding-right: 20vh;
-   width:500px;
+   width:700px;
+   
 }
 label{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     margin-right: 25vh;
     padding: 1vh;
 }
 input[type="text"]{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     transition: box-shadow 0.3s ease-in-out,
     box-border 0.5s ease-in-out; 
 }
@@ -40,7 +41,7 @@ input[type="text"]:hover{
 input[type="date"]{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     transition: box-shadow 0.3s ease-in-out,
     box-border 0.5s ease-in-out; 
 }
@@ -62,11 +63,11 @@ input[type="date"]:hover{
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     color:blue;
     line-height: 70px;
-    height: 70px;
-    width: 100%;
+    min-height: 70px;
+    width: 45vh;
     transition: box-shadow 0.3s ease-in-out,
     box-border 0.5s ease-in-out; 
     border-radius: 20px;
@@ -78,7 +79,11 @@ input[type="date"]:hover{
 
 .createNew span{
     
-    font-size: 37px;
-    padding-right: 40px;
+    font-size: 20px;
+    padding-right: 20px;
     
+}
+
+.img{
+    width: 300px;
 }

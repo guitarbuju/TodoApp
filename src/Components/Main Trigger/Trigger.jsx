@@ -79,7 +79,7 @@ const Trigger = () => {
           Create new item
         </p>
 
-        {!showForm && <img src={happy} />}
+        {!showForm && <img className={styles.img} src={happy} />}
 
         {showForm && (
           <form onSubmit={handleSubmit(onSubmit)}>

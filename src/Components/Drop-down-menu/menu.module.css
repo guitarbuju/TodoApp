@@ -3,20 +3,21 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 1;
   }
   
   .dropdown_toggle {
     width:8vh;
     border: none;
     color: #333;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
     
     background-color:rgb(250, 246, 246)
   }
   
   .dropdown_menu {
-    display: none;
+   
     position: absolute;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -26,7 +27,7 @@
     width:20vh;
     border-radius: 10px 10px 10px 10px;
     box-shadow:0px 0px 0px 6px 1px rgba(0,0,0,0.15);
-    ;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   
   }
   
@@ -43,7 +44,7 @@
     text-shadow: none;
    line-height: 50%;
     font-family: 'Roboto', sans-serif;
-    font-size: smaller;
+    font-size: 15px;
 
   }
   .dropdown_menu li a:hover {

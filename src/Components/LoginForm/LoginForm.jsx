@@ -27,6 +27,7 @@ const LoginForm = () =>{
 
     try {
       const response = await axios.post("http://localhost:3006/login", data);
+        // eslint-disable-next-line no-unused-vars
       const { token, user ,error} = response.data;
 
       console.log(response.data)
@@ -49,7 +50,7 @@ const LoginForm = () =>{
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleContainer}>
-        <h1 className={styles.title}><span style={{color:'#fec734',textShadow:'0.5px 0.5px 0.5px gray'}}>ToDo App</span>List </h1>
+        <h1 className={styles.title}><span style={{color:'#fec734',textShadow:'0.5px 0.5px 0.5px gray',fontSize:' 45px'}}>ToDo App</span>List </h1>
         <h2 className={styles.title}>Welcome Back !!! come on IN </h2>
         <img className={styles.img} src={happy2} />
       </div>
@@ -101,7 +102,7 @@ const LoginForm = () =>{
           </p>
 
           <button type="submit" id="login" className="btn btn-warning">
-            Log In
+            LogIn
           </button>
           <button type="reset" id="reset" className="btn btn-success">
             Reset
