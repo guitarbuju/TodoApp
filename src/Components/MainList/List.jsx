@@ -3,6 +3,7 @@ import styles from "../MainList/list.module.css"
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Description from "../Description/Description";
+import {BASE_URL} from '../../../config'
 
 
 const List = ({showForm}) => {
@@ -13,9 +14,7 @@ const List = ({showForm}) => {
 
   ///////////////FETCH LISTA GENERAL///////////////
   const daList = async () => {
-    // const token = localStorage.getItem("token");
-    // const user = localStorage.getItem("user");
-
+   
     const requestedOptions = {
       method: "GET",
       headers: {
@@ -24,7 +23,7 @@ const List = ({showForm}) => {
       },
     };
     const response = await axios.get(
-      ` http://Localhost:3006/today/${user}`,
+      ` ${BASE_URL}/today/${user}`,
        requestedOptions
      );
      const data = await response.data;
@@ -63,7 +62,7 @@ const List = ({showForm}) => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/done/${_id}/${user}`,
+      `${BASE_URL}/done/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -90,7 +89,7 @@ const List = ({showForm}) => {
     };
 
     const response = await axios.delete(
-      `http://Localhost:3006/delete/${_id}/${user}`,
+      `${BASE_URL}/delete/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -115,7 +114,7 @@ const List = ({showForm}) => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/inprogress/${_id}/${user}`,
+      `${BASE_URL}/inprogress/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;

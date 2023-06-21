@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import happy3 from "../../assets/happy3.jpeg";
+import {BASE_URL} from '../../../config'
 
 const MainForm = () => {
  
@@ -23,7 +24,7 @@ const MainForm = () => {
     console.log(data);
 
     try {
-      const response = await axios.post("http://localhost:3006/register", data);
+      const response = await axios.post(`${BASE_URL}/register`, data);
       const { token, user } = response.data;
       console.log(response.data);
       // Save the token to local storage

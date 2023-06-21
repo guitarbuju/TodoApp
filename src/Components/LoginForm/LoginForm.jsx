@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import happy2 from "../../assets/happy2.jpeg";
+import {BASE_URL} from '../../../config'
+
 
 const LoginForm = () =>{
 
@@ -26,7 +28,7 @@ const LoginForm = () =>{
     console.log(data);
 
     try {
-      const response = await axios.post("http://localhost:3006/login", data);
+      const response = await axios.post(`${BASE_URL}/login`, data);
         // eslint-disable-next-line no-unused-vars
       const { token, user ,error} = response.data;
 
