@@ -60,7 +60,8 @@ font-size: 45px;
 }
 
 .buttons {
-  padding: 2vh;
+  gap:1vw;
+  padding: 1vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
