@@ -3,6 +3,7 @@ import styles from "../MainList/Alltasks.module.css"
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Description from "../Description/Description";
+import {BASE_URL} from '../../../config'
 
 const Others = () => {
   const [Lista, setLista] = useState([]);
@@ -23,7 +24,7 @@ const Others = () => {
       },
     };
     const response = await axios.get(
-      `http://Localhost:3006/${user}`,
+      `${BASE_URL}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -63,7 +64,7 @@ const Others = () => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/done/${_id}/${user}`,
+      `${BASE_URL}/done/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -90,7 +91,7 @@ const Others = () => {
     };
 
     const response = await axios.delete(
-      `http://Localhost:3006/delete/${_id}/${user}`,
+      `${BASE_URL}/delete/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;
@@ -115,7 +116,7 @@ const Others = () => {
     };
 
     const response = await axios.patch(
-      `http://Localhost:3006/inprogress/${_id}/${user}`,
+      `${BASE_URL}/inprogress/${_id}/${user}`,
       requestedOptions
     );
     const data = await response.data;

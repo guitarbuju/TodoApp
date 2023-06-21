@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.css";
 import List from "../MainList/List"; //Este es el componente con la lista
 import axios from "axios";
+import {BASE_URL} from '../../../config'
 import happy from "../../assets/Happy-People-PNG.png";
 //import Listado from '../../daList/'//se importa la funcion que trae el array con la data desde el fichero de funciones
 
@@ -54,7 +55,7 @@ const Trigger = () => {
           },
         };
         const response = await axios.post(
-          `http://localhost:3006/main/${user}`,
+          `${BASE_URL}/main/${user}`,
           obj,
           config
         );

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { useState, useEffect, React } from "react";
 import styles from "./Completed.module.css";
-
+import {BASE_URL} from '../../../config'
 import axios from 'axios'
 
 const Completed = () => {
@@ -18,7 +18,7 @@ const Completed = () => {
     }
    
 
-    const response = await axios.get(`http://Localhost:3006/${user}`,config);
+    const response = await axios.get(`${BASE_URL}/${user}`,config);
     const data = await response.data;
     const sortedList = data.sort((a, b) => b - a).reverse();
 
