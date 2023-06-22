@@ -28,7 +28,7 @@
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     color: #4E4E4E;
     line-height: 70px;
     height: 70px;
@@ -70,7 +70,7 @@
     flex-direction: row;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     color: #4E4E4E;
     line-height: 70px;
     height: 70px;
@@ -117,7 +117,7 @@ input[type="radio"] {
    
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     color: #4E4E4E;
     line-height: 70px;
 
@@ -127,7 +127,7 @@ input[type="radio"] {
     text-decoration: underline;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
-    font-size: small;
+    font-size: 10px;
     color:blue;
     line-height: 70px;
     animation: appear 0.7s linear infinite;
