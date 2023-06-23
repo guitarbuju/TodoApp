@@ -149,9 +149,7 @@ const List = ({showForm}) => {
     
       <div className={styles.container}>
       
-          <h4>List of Today`sTasks </h4>
-         
-       
+      <h4>List of Today&apos;s Tasks</h4>
 
         <div className={styles.wrapper}>
           {Lista.length === 0 ? (
