@@ -7,14 +7,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import happy3 from "../../assets/happy3.jpeg";
-import {BASE_URL} from '../../../config'
+import { BASE_URL } from "../../../config";
 
 const MainForm = () => {
- 
   const {
     register,
     handleSubmit,
-     // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars
     formState: { errors },
   } = useForm();
 
@@ -42,9 +41,13 @@ const MainForm = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleContainer}>
-        <h1 className={styles.title} >
+        <h1 className={styles.title}>
           <span
-            style={{ color: "#fec734", textShadow: "0.5px 0.5px 0.5px gray",fontSize: '45px' }}
+            style={{
+              color: "#fec734",
+              textShadow: "0.5px 0.5px 0.5px gray",
+              fontSize: "45px",
+            }}
           >
             ToDo App
           </span>
@@ -58,7 +61,7 @@ const MainForm = () => {
           <h1>Sign In</h1>
           <div className={styles.dainput}>
             <label htmlFor="name" style={{ fontWeight: "bolder" }}>
-              NAME
+              Name
             </label>
             <input
               className="form-control"
@@ -70,7 +73,7 @@ const MainForm = () => {
 
           <div className={styles.dainput}>
             <label htmlFor="email" style={{ fontWeight: "bolder" }}>
-              EMAIL
+              Email
             </label>
             <input
               className="form-control"
@@ -82,7 +85,7 @@ const MainForm = () => {
 
           <div className={styles.dainput}>
             <label htmlFor="password" style={{ fontWeight: "bolder" }}>
-              PASSWORD
+              Password
             </label>
             <input
               className="form-control"
@@ -97,30 +100,33 @@ const MainForm = () => {
           <button type="submit" className="btn btn-warning">
             Sign In
           </button>
-          <p>
-            <Link to="/login">
-              Already a member? please{" "}
-              <span
+          <div className={styles.links}>
+            <p>
+              <Link to="/login">
+                Already a member? please
+                <span
+                  style={{
+                    textDecoration: "underline",
+                    textShadow: "0.5px 0.5px 0.5px gray",
+                    fontSize:'16px'
+                  }}
+                >
+                  LOG IN
+                </span>
+              </Link>{" "}
+              <br />
+              wanna go back{" "}
+              <Link
                 style={{
                   textDecoration: "underline",
                   textShadow: "0.5px 0.5px 0.5px gray",
                 }}
+                to="/"
               >
-                LOG IN
-              </span>
-            </Link>{" "}
-            <br />
-            wanna go back{" "}
-            <Link
-              style={{
-                textDecoration: "underline",
-                textShadow: "0.5px 0.5px 0.5px gray",
-              }}
-              to="/"
-            >
-              HOME?
-            </Link>
-          </p>
+                HOME?
+              </Link>
+            </p>
+          </div>
         </div>
       </form>
     </div>
