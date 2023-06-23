@@ -7,12 +7,10 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import happy2 from "../../assets/happy2.jpeg";
-import {BASE_URL} from '../../../config'
+import { BASE_URL } from "../../../config";
 
-
-const LoginForm = () =>{
-
-  const [errorMessage, setErrorMessage] = useState("")
+const LoginForm = () => {
+  const [errorMessage, setErrorMessage] = useState("");
 
   // eslint-disable-next-line no-unused-vars
   const {
@@ -29,30 +27,40 @@ const LoginForm = () =>{
 
     try {
       const response = await axios.post(`${BASE_URL}/login`, data);
-        // eslint-disable-next-line no-unused-vars
-      const { token, user ,error} = response.data;
+      // eslint-disable-next-line no-unused-vars
+      const { token, user, error } = response.data;
 
-      console.log(response.data)
-      
+      console.log(response.data);
+
       // Save the token to local storage
       localStorage.setItem("token", token);
       localStorage.setItem("user", user.id);
 
       navigate("/spinner2");
-   
-  console.log("Logged in successfully");
-} catch (error) {
-  const errorMessage = error.response.data.error;
-  setErrorMessage(errorMessage)
-    console.error(errorMessage);
-    
-  }
-}
+
+      console.log("Logged in successfully");
+    } catch (error) {
+      const errorMessage = error.response.data.error;
+      setErrorMessage(errorMessage);
+      console.error(errorMessage);
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleContainer}>
-        <h1 className={styles.title}><span style={{color:'#fec734',textShadow:'0.5px 0.5px 0.5px gray',fontSize:' 45px'}}>ToDo App</span>List </h1>
+        <h1 className={styles.title}>
+          <span
+            style={{
+              color: "#fec734",
+              textShadow: "0.5px 0.5px 0.5px gray",
+              fontSize: " 45px",
+            }}
+          >
+            ToDo App
+          </span>
+          List{" "}
+        </h1>
         <h2 className={styles.title}>Welcome Back !!! come on IN </h2>
         <img className={styles.img} src={happy2} />
       </div>
@@ -62,7 +70,7 @@ const LoginForm = () =>{
           <h1>Log In</h1>
           <div className={styles.dainput}>
             <label htmlFor="email" style={{ fontWeight: "bolder" }}>
-              EMAIL
+              Email
             </label>
             <input
               type="email"
@@ -73,23 +81,31 @@ const LoginForm = () =>{
 
           <div className={styles.dainput}>
             <label htmlFor="password" style={{ fontWeight: "bolder" }}>
-              PASSWORD
+              Password
             </label>
             <input
               type="password"
               className="form-control"
               {...register("password", { required: true })}
             />
-            {errorMessage && <span>{errorMessage}</span>}
+            {errorMessage && <span className={styles.error}>{errorMessage}</span>}
           </div>
         </div>
 
-        <div className={styles.buttons}>
+        <div className={styles.buttonsWrapper}>
           <p className="signin">
-            <Link to="/signIN">Not a member yet?. Please <span style={{
-                textDecoration: "underline",
-                textShadow: "0.5px 0.5px 0.5px gray",
-              }}>REGISTER</span></Link>
+            <Link to="/signIN">
+              Not a member yet?. Please{" "}
+              <span
+                style={{
+                  textDecoration: "underline",
+                  textShadow: "0.5px 0.5px 0.5px gray",
+                  fontSize: "16px",
+                }}
+              >
+                REGISTER
+              </span>
+            </Link>
             <br />
             wanna go back{" "}
             <Link
@@ -101,14 +117,15 @@ const LoginForm = () =>{
             >
               HOME?
             </Link>
-          </p>
-
-          <button type="submit" id="login" className="btn btn-warning">
-            LogIn
-          </button>
-          <button type="reset" id="reset" className="btn btn-success">
-            Reset
-          </button>
+          </p> 
+          <div className={styles.buttons}>
+            <button type="submit" id="login" className="btn btn-warning">
+              LogIn
+            </button>
+            <button type="reset" id="reset" className="btn btn-success">
+              Reset
+            </button>
+          </div>
         </div>
       </form>
     </div>
