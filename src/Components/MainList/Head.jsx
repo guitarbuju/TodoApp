@@ -40,7 +40,7 @@ const Head = () => {
           <p><NavLink  className={styles.NavLink} to="/inProgress">progress &#9852;</NavLink></p>
           <p><NavLink  className={styles.NavLink} to="/completed"> done &#x2713;</NavLink></p>
           <p><NavLink className={styles.NavLink}  to="/allTasks">all &#10026;</NavLink></p>
-          <p><NavLink className={styles.NavLink}  to="/categories"> cate &#10063;</NavLink></p>
+          <p><NavLink className={styles.NavLink}  to="/categories">cats &#128008;&#8205;&#11035;</NavLink></p>
           </div>
         </div>
 
