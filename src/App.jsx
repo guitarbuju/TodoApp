@@ -15,20 +15,23 @@ import Personal from "./Components/Categories/Personal";
 import Work from "./Components/Categories/Work";
 import Others from "./Components/Categories/Others";
 import CurrentTasks from "./Components/MainList/CurrentTaks";
+import Footer from "./Components/Footer/Footer";
 
 
 function App() {
   const location = useLocation();
   const excludeHeaderPaths = ['/', '/login', '/signin'];
+  const excludeFooterPaths = ['/','/login', '/signin'];
 
   const shouldRenderHeader = !excludeHeaderPaths.includes(location.pathname);
+  const shouldRenderFooter = !excludeFooterPaths.includes(location.pathname);
 
 
   return(
     <div>
   
-  {shouldRenderHeader && <Header />}
-
+  {shouldRenderHeader && <Header /> }
+  
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
@@ -47,6 +50,7 @@ function App() {
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
+      {shouldRenderFooter && <Footer />}
     </div>
   );
 }

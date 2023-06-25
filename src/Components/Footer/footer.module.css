@@ -1,0 +1,39 @@
+.wrapper {
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 14vh;
+    width: 100%;
+    background-color: #FEC734;
+    box-shadow: 3px 4px 25px -9px;
+    display: flex;
+    justify-content: center;
+    align-content:flex-end;
+    gap:10vw
+  }
+  
+  .social{
+   
+    line-height: 14vh;
+    width:200px;
+  }
+  .nuclio{
+   margin-left: 50px;
+    line-height: 14vh;
+    width:80px;
+  }
+  .title{
+    font-size: 10px;
+    text-decoration: underline;
+   
+  }
+  .g{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content:center;
+    width: 200px;
+    
+  }
+  .guitar{width: 50px;}
