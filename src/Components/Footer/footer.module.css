@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-content:flex-end;
-    gap:10vw
+    gap:8vw
   }
   
   .social{
@@ -37,3 +37,6 @@
     
   }
   .guitar{width: 50px;}
+  .cityLogo{
+    width:100px;
+  }
