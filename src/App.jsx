@@ -1,6 +1,6 @@
 import Trigger from "./Components/Main Trigger/Trigger";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,useLocation } from "react-router-dom";
 import Completed from "./Components/MainList/Completed";
 import AllTasks from "./Components/MainList/AllTasks";
 import LoginForm from "./Components/LoginForm/LoginForm";
@@ -18,10 +18,16 @@ import CurrentTasks from "./Components/MainList/CurrentTaks";
 
 
 function App() {
-  return (
+  const location = useLocation();
+  const excludeHeaderPaths = ['/', '/login', '/signin'];
+
+  const shouldRenderHeader = !excludeHeaderPaths.includes(location.pathname);
+
+
+  return(
     <div>
-      <Header />
-     
+  
+  {shouldRenderHeader && <Header />}
 
       <Routes>
         <Route path="/" element={<Home />} />
