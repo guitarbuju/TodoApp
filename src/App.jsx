@@ -20,8 +20,8 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
   const location = useLocation();
-  const excludeHeaderPaths = ['/', '/login', '/signin'];
-  const excludeFooterPaths = ['/','/login', '/signin'];
+  const excludeHeaderPaths = ['/', '/login', '/signIN'];
+  const excludeFooterPaths = ['/', '/login', '/signIN'];
 
   const shouldRenderHeader = !excludeHeaderPaths.includes(location.pathname);
   const shouldRenderFooter = !excludeFooterPaths.includes(location.pathname);
@@ -35,7 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/signin" element={<MainForm />} />
+        <Route path="/signIN" element={<MainForm />} />
         <Route path="/today" element={<Trigger />} />
         <Route path="/completed" element={<Completed />} />
         <Route path="/inprogress" element={<CurrentTasks/>} />
