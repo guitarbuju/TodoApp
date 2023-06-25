@@ -1,6 +1,6 @@
 import Trigger from "./Components/Main Trigger/Trigger";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,useLocation } from "react-router-dom";
 import Completed from "./Components/MainList/Completed";
 import AllTasks from "./Components/MainList/AllTasks";
 import LoginForm from "./Components/LoginForm/LoginForm";
@@ -15,14 +15,23 @@ import Personal from "./Components/Categories/Personal";
 import Work from "./Components/Categories/Work";
 import Others from "./Components/Categories/Others";
 import CurrentTasks from "./Components/MainList/CurrentTaks";
+import Footer from "./Components/Footer/Footer";
 
 
 function App() {
-  return (
-    <div>
-      <Header />
-     
+  const location = useLocation();
+  const excludeHeaderPaths = ['/', '/login', '/signin'];
+  const excludeFooterPaths = ['/','/login', '/signin'];
 
+  const shouldRenderHeader = !excludeHeaderPaths.includes(location.pathname);
+  const shouldRenderFooter = !excludeFooterPaths.includes(location.pathname);
+
+
+  return(
+    <div>
+  
+  {shouldRenderHeader && <Header /> }
+  
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
@@ -41,6 +50,7 @@ function App() {
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
+      {shouldRenderFooter && <Footer />}
     </div>
   );
 }
