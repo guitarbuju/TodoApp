@@ -11,6 +11,8 @@ const Head = () => {
 
   const navigate = useNavigate();
   const user = localStorage.getItem("user");
+  const userName = localStorage.getItem("name");
+ 
   const logout = () => {
     // Clear token and user data from localStorage
     localStorage.removeItem("token");
@@ -22,19 +24,25 @@ const Head = () => {
   };
 
   return (
+    
     <div className={styles.wrapper}>
+   
       <div className={user ? styles.head : styles.nohead}>
         <div className={styles.date}>
           <p className={styles.month}>{currentMonth}</p>
           <div className={styles.dayWrapper}>
             <p className={styles.day}>{currentDay}</p>
           </div>
+           
         </div>
 
         <div className={styles.today}>
+        
           <h1>Today</h1>
+          <p className={styles.username}>I&apos;m {userName}</p>
         </div>
         <div className={styles.dots}>
+       
           <div className={styles.icons}>
           <p ><NavLink className={styles.NavLink} to="/today">today &#9788;</NavLink></p>
           <p><NavLink  className={styles.NavLink} to="/inProgress">progress &#9852;</NavLink></p>

@@ -6,6 +6,7 @@ import Description from "../Description/Description";
 import {BASE_URL} from '../../../config'
 
 
+
 const List = ({showForm}) => {
   const [Lista, setLista] = useState([]);
   const [ShowDesc,SetShowDesc]=useState(false)
@@ -197,7 +198,7 @@ const List = ({showForm}) => {
         </div>
       </div>
       {ShowDesc && <Description id={id2} Lista={Lista} ShowDesc={ShowDesc} SetShowDesc={SetShowDesc}/>}
-    
+   
     </div>
       
   );
