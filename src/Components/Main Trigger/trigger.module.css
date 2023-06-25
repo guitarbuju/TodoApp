@@ -72,6 +72,7 @@ input[type="date"]:hover{
     box-border 0.5s ease-in-out; 
     border-radius: 20px;
     padding-left: 95px;
+    padding-top: 3vh;
     cursor:pointer;
 
 
@@ -85,5 +86,17 @@ input[type="date"]:hover{
 }
 
 .img{
-    width: 300px;
+    animation: slidein 0.5s ease-in-out 1;
+    width: 450px;
 }
+
+@keyframes slidein {
+    0% {
+      margin-left: -1050px;
+      opacity: 0;
+    }
+    100% {
+      margin-left: 0px;
+      opacity: 1;
+    }
+  }
