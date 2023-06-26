@@ -100,7 +100,7 @@ const Trigger = () => {
               <input
                 type="text"
                 className="form-control"
-                {...register("task")}
+                {...register("task",{ maxLength: 18 })}
               />
               <label>Add Category</label>
               <select

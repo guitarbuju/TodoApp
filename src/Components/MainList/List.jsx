@@ -173,7 +173,7 @@ const List = ({showForm}) => {
                     <p className={styles.toggler} data-id={element._id} onClick={handleDescription}>
                       &#x2630;
                     </p>
-                    <p>{element.task}</p>
+                    <p className={styles.task}>{element.task}</p>
                   </div>
                   <div className={styles.statusWrapper}>
                     <p className={styles.formatDate}>

@@ -55,7 +55,7 @@
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: medium;
+    font-size: 16px;
     color: #4E4E4E;
     line-height: 70px;
     height: 70px;
@@ -65,7 +65,7 @@
     border-radius: 20px;
     padding-left: 50px;
     cursor:pointer;
-    overflow:hidden;
+
    
 }
 
@@ -86,7 +86,10 @@
    
 
 }
-
+.task{
+  overflow:hidden;
+  
+}
   span{
     padding-left: 6px;
     color:#3D82EB;
