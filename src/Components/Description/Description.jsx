@@ -33,7 +33,7 @@ const Description = ({ id, Lista, ShowDesc, SetShowDesc }) => {
       <p onClick={handleCloseClick}>CLOSE x</p>
       <img src={Image} />
       <ul className={Styles.boxwrap}>
-        {foundElement && (
+        {foundElement ? (
           <>
             <li>
               <h2>{foundElement.task}</h2>
@@ -55,7 +55,9 @@ const Description = ({ id, Lista, ShowDesc, SetShowDesc }) => {
               {new Date(foundElement.updatedAt).toLocaleDateString()}
             </li>
           </>
-        )}
+          ) :(<h5>!!Sorry.. No element found!!</h5>)
+
+        }
       </ul>
     </div>
   );
