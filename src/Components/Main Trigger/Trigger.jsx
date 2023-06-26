@@ -75,10 +75,11 @@ const Trigger = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <p className={styles.createNew} onClick={handleToggle}>
+      {!showForm && <p className={styles.createNew} onClick={handleToggle}>
           <span>&#x2A01;</span>
           Create new item
-        </p>
+        </p>}
+        
 
         {!showForm && <img className={styles.img} src={happy} />}
 
@@ -121,8 +122,12 @@ const Trigger = () => {
                 value="Reset"
                 type="reset"
                 className="btn btn-outline-warning btn-lg"
-              />
+              /> 
+              <button 
+            onClick={()=>{setShowForm(false)}}
+            className="btn btn-outline-danger btn-lg">Close</button>
             </div>
+           
           </form>
         )}
       </div>
