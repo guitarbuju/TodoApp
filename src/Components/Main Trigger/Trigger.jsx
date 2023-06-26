@@ -117,16 +117,16 @@ const Trigger = () => {
               <input
                 value="Input"
                 type="submit"
-                className="btn btn-outline-primary btn-lg"
+                className="btn btn-outline-primary "
               />
               <input
                 value="Reset"
                 type="reset"
-                className="btn btn-outline-warning btn-lg"
+                className="btn btn-outline-warning "
               />
-              <button className="btn btn-outline-danger btn-lg"
+              <button className="btn btn-outline-danger "
               onClick={()=>setShowForm(false)}
-              > CLOSE</button>
+              > Close</button>
             </div>
           </form>
         )}
