@@ -75,16 +75,14 @@ const Trigger = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-      {!showForm &&  <p className={styles.createNew} onClick={handleToggle}>
+        <p className={styles.createNew} onClick={handleToggle}>
           <span>&#x2A01;</span>
           Create new item
-        </p> }
-       
+        </p>
 
         {!showForm && <img className={styles.img} src={happy} />}
 
         {showForm && (
-          
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <div>
@@ -117,16 +115,13 @@ const Trigger = () => {
               <input
                 value="Input"
                 type="submit"
-                className="btn btn-outline-primary "
+                className="btn btn-outline-primary btn-lg"
               />
               <input
                 value="Reset"
                 type="reset"
-                className="btn btn-outline-warning "
+                className="btn btn-outline-warning btn-lg"
               />
-              <button className="btn btn-outline-danger "
-              onClick={()=>setShowForm(false)}
-              > Close</button>
             </div>
           </form>
         )}

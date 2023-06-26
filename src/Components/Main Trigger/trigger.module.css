@@ -87,7 +87,7 @@ input[type="date"]:hover{
 
 .img{
     width: 450px;
-    animation: slidein 0.5s ease-in-out 1;
+    animation: slidein 1s ease-in-out 1;
 }
 
 @keyframes slidein {
