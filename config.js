@@ -1,1 +1,2 @@
-export const BASE_URL ='todoapp-bk-production.up.railway.app'
+export const BASE_URL = 'https://todoapp-bk-production.up.railway.app';
+
