@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost:3006';
+export const BASE_URL = 'todoapp-bk-production.up.railway.app';
