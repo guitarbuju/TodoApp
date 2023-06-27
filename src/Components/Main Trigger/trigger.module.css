@@ -60,21 +60,19 @@ input[type="date"]:hover{
 
 }
 .createNew{
-    padding-top: 3vh;
+    margin-top: 120px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 15px;
     color:blue;
-    line-height: 70px;
-    min-height: 70px;
     width: 45vh;
     transition: box-shadow 0.3s ease-in-out,
     box-border 0.5s ease-in-out; 
     border-radius: 20px;
     padding-left: 95px;
     cursor:pointer;
-
+   
 
 }
 
@@ -82,12 +80,13 @@ input[type="date"]:hover{
     
     font-size: 20px;
     padding-right: 20px;
-    
+   
 }
 
 .img{
     width: 450px;
     animation: slidein 1s ease-in-out 1;
+    padding-bottom: 60px;
 }
 
 @keyframes slidein {
